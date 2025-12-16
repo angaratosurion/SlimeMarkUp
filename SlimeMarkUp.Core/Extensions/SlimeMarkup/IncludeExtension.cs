@@ -59,15 +59,17 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
                     count += tc;
 
                 //}
-              //  var content = File.ReadAllText(fullPath);
+                  var content = File.ReadAllText(fullPath);
+
+
                 return new MarkupElement
                 {
-                    //Tag = "raw",
-                    //Content = "<!-- start of file :"+ inputPath+" -->" + content+ "<!-- end of file : "+ inputPath 
-                    //+" -->"
-                    Tag = "iframe",
-                    Content = "<iframe src =\""+fullPath + 
-                    "\"style=\"  width: 100% ;height:100%;\"/>"
+                    Tag = "raw",
+                    Content = "<!-- start of file :" + inputPath + " -->\n" + content + "\n<!-- end of file : " + inputPath
+                    + " -->"
+
+
+
 
                 };
             }
