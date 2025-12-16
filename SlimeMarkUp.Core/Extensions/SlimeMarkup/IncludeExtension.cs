@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
 {
-    public class IncludeScriptExtension : IBlockMarkupExtension
+    public class IncludeExtension : IBlockMarkupExtension
     {
 
         
@@ -65,7 +65,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
                     //Tag = "raw",
                     //Content = "<!-- start of file :"+ inputPath+" -->" + content+ "<!-- end of file : "+ inputPath 
                     //+" -->"
-                    Tag = "script",
+                    Tag = "iframe",
                     Content = "src =\""+fullPath + "\""
 
                 };

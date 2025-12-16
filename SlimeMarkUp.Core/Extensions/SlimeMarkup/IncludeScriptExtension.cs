@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
 {
-    public class IncludeExtension : IBlockMarkupExtension
+    public class IncludeScriptExtension : IBlockMarkupExtension
     {
 
         
