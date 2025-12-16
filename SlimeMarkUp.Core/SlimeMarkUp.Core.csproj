@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
     <FileVersion>$(VersionPrefix)</FileVersion>
-    <Version>0.1.0.1</Version>
+    <Version>0.1.0.5</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/angaratosurion/SlimeMarkUp</RepositoryUrl>

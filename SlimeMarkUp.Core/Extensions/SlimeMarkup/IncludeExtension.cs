@@ -66,7 +66,8 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
                     //Content = "<!-- start of file :"+ inputPath+" -->" + content+ "<!-- end of file : "+ inputPath 
                     //+" -->"
                     Tag = "iframe",
-                    Content = "src =\""+fullPath + "\""
+                    Content = "<iframe src =\""+fullPath + 
+                    "\"style=\"  width: 100% ;height:100%;\"/>"
 
                 };
             }

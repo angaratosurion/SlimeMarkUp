@@ -23,7 +23,11 @@ namespace SlimeMarkUp.Core
                 {
                     sb.Append(el.Content);
                 }
-                 
+                if (el.Tag == "iframe")
+                {
+                    sb.Append(el.Content);
+                }
+
                 else
                 {
                     sb.Append($"<{el.Tag}>{el.Content}</{el.Tag}>");
