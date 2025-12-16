@@ -20,7 +20,8 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
         {
             return true;
         }
-        private static readonly Regex IncludeRegex = new(@"<!--\s*include:\s*(.+?)\s*-->", RegexOptions.Compiled);
+        private static readonly Regex IncludeRegex = new(@"<!--\s*include:\s*(.+?)\s*-->", 
+            RegexOptions.Compiled);
         static int count=0;
         public bool CanParse(string line)
         {
