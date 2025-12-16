@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
 {
-    public class IncludeScriptExtension : IBlockMarkupExtension
+    public class IncludeExtension : IBlockMarkupExtension
     {
 
         
@@ -20,7 +20,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
         {
             return true;
         }
-        private static readonly Regex IncludeRegex = new(@"<!--\s*include:\s*(.+?)\s*-->", 
+        private static readonly Regex IncludeRegex = new(@"<!--\s*include script:\s*(.+?)\s*-->", 
             RegexOptions.Compiled);
         static int count=0;
         public bool CanParse(string line)
@@ -66,7 +66,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
                     //Content = "<!-- start of file :"+ inputPath+" -->" + content+ "<!-- end of file : "+ inputPath 
                     //+" -->"
                     Tag = "script",
-                    Content = "src =\""+fullPath + "\""
+                    Content = "src =\""+fullPath+"\""
 
                 };
             }

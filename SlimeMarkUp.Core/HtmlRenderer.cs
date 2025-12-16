@@ -19,6 +19,11 @@ namespace SlimeMarkUp.Core
                 {
                     sb.Append(el.Content); // περιέχει όλο το table html
                 }
+                if (el.Tag == "link")
+                {
+                    sb.Append(el.Content);
+                }
+                 
                 else
                 {
                     sb.Append($"<{el.Tag}>{el.Content}</{el.Tag}>");
