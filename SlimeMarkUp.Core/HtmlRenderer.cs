@@ -28,6 +28,7 @@ namespace SlimeMarkUp.Core
                     sb.Append(el.Content);
                 }
 
+
                 else
                 {
                     sb.Append($"<{el.Tag}>{el.Content}</{el.Tag}>");

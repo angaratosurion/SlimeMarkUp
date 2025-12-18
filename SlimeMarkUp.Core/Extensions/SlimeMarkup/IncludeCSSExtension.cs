@@ -66,7 +66,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
                     //Content = "<!-- start of file :"+ inputPath+" -->" + content+ "<!-- end of file : "+ inputPath 
                     //+" -->"
                     Tag = "link",
-                    Content = "rel=\"stylesheet\" href=\"" + fullPath +"\""
+                    Content = "<link rel=\"stylesheet\" href=\"" + fullPath +"\"/>"
 
                 };
             }
