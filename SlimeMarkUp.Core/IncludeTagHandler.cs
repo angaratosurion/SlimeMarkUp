@@ -1,13 +1,12 @@
-﻿using System;
+﻿using SlimeMarkUp.Core;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
+namespace SlimeMarkUp.Core
 {
-    
-    public class IncludeExtension : IBlockMarkupExtension
+    public class IncludeTagHandler //: IBlockMarkupExtension
     {
 
         
@@ -30,8 +29,9 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
             return IncludeRegex.IsMatch(line);
         }
 
-        public MarkupElement? Parse(string line)
+        public string Parse(string line)
         {
+            string ap = "";
             var match = IncludeRegex.Match(line);
             if (!match.Success)
                 return null;
@@ -41,11 +41,11 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
 
             if (!File.Exists(fullPath))
             {
-                return new MarkupElement
-                {
-                    Tag = "p",
-                    Content = $"<!-- ERROR: File '{inputPath}' not found -->"
-                };
+                //return new MarkupElement
+                //{
+                //    Tag = "p",
+                ap  = $"<!-- ERROR: File '{inputPath}' not found -->";
+                 
             }
 
             try
@@ -64,37 +64,31 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
                   var content = File.ReadAllText(fullPath);
 
 
-                return new MarkupElement
-                {
-                    Tag = "raw",
-                    Content = "<!-- start of file :" + inputPath + " -->\n" + content + "\n<!-- end of file : " + inputPath
-                    + " -->"
+                ap = "<!-- start of file :" + inputPath + " -->\n" + content + "\n<!-- end of file : " + inputPath
+                    + " -->";
+
+                return ap;
 
 
-
-
-                };
+                
             }
             catch (Exception ex)
             {
-                return new MarkupElement
-                {
-                    Tag = "p",
-                    Content = $"<!-- ERROR: Could not read '{inputPath}': {ex.Message} -->"
-                };
+                return $"<!-- ERROR: Could not read '{inputPath}': {ex.Message} -->";
+                
             }
         }
 
-        public IEnumerable<MarkupElement>? ParseBlock(Queue<string> lines)
+        public string ParseBlock(Queue<string> lines)
         {
              if ( lines.Count==0)
             { return null; }
-            var line = lines.Dequeue();
-            if (!CanParse(line))
-                return null;
+            var line = lines.ToList()[0];
+            //if (!CanParse(line))
+            //    return null;
 
             var element = Parse(line);
-            return element != null ? new[] { element } : null;
+            return element;
         }
 
         public int Count

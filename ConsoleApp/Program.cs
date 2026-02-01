@@ -23,7 +23,7 @@ namespace SlimeMarkUp
                 new BlockquoteExtension(),
                 new InlineStyleExtension(),
                 new LinkExtension(),
-                 new IncludeExtension(),  
+               //  new IncludeExtension(),  
                 new IncludeCSSExtension()
                  , new IncludeScriptExtension(),
                 new HorizontalRuleExtension() ,new EscapeCharsExtension()

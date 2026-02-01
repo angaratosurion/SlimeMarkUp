@@ -18,6 +18,7 @@ namespace SlimeMarkUp.Core
         private readonly List<IBlockMarkupExtension> _extensions;
         private static readonly Regex escaperegex =
           new Regex(@"^(?:\s{0,3})\d+[.)]\s+", RegexOptions.Compiled);
+        IncludeTagHandler includeTagHandler = new IncludeTagHandler();
         public MarkupParser(IEnumerable<IBlockMarkupExtension> extensions)
         {
             _extensions = extensions.OrderBy(x => x.Order).ToList();
@@ -37,6 +38,7 @@ namespace SlimeMarkUp.Core
 
             var elements = new List<MarkupElement>();
              text=PreParse(text);
+            
             var lines = new Queue<string>(text.Split('\n').Select(l => l.TrimEnd()));
             
 
@@ -128,41 +130,42 @@ namespace SlimeMarkUp.Core
             // Επιστρέφει true αν το πρώτο char είναι κενό ή tab
             return char.IsWhiteSpace(line[0]);
         }
-         
-        string PreParse(string text)
+
+       string  PreParse(string text)
         {
             string ap=" ";
             var lines = new Queue<string>(text.Split('\n').Select(l => l.TrimEnd()));
-            var elements = new List<MarkupElement>();
+            
            
-            while (lines.Count > 0)
+          foreach( var line in lines)
             {
-                var line = lines.Peek();
+               // var line = lines.Peek();
 
                 if (string.IsNullOrWhiteSpace(line))
                 {
-                    lines.Dequeue();
+                    //lines.Dequeue();
                     continue;
                 }
                 
-                foreach (var ext in _extensions)
-                {
-                   
-                    if (ext.CanParse(line)  )
+                  
+                     if (includeTagHandler.CanParse(line)  )
                     {
-                        var blockElements = ext.ParseBlock(lines);
+                        var blockElements = includeTagHandler.Parse(line);
                         if (blockElements != null)
                         {
-                            elements.AddRange(blockElements);
-                           // matched = true;
-                            break;
+                           ap+= blockElements;
+                        //break;
                         }
                     }
-
+                     else
+                {
+                    ap += line+"\n";
                 }
+
+                
             }
-            var html = new HtmlRenderer();
-            ap= html.Render(elements.ToArray());
+            //var html = new HtmlRenderer();
+           // ap= html.Render(elements.ToArray());
             return ap;
         }
     }
