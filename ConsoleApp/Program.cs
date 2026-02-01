@@ -25,7 +25,8 @@ namespace SlimeMarkUp
                 new LinkExtension(),
                  new IncludeExtension(),  
                 new IncludeCSSExtension()
-                 , new IncludeScriptExtension()
+                 , new IncludeScriptExtension(),
+                new HorizontalRuleExtension()
 
             });
 

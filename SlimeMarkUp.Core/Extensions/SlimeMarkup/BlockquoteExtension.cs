@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
 {
-    public class BlockquoteExtension : IBlockMarkupExtension
+    public class HorizontalRuleExtension : IBlockMarkupExtension
     {
         public int Count { get; }
         public bool CanParse(string line) => line.TrimStart().StartsWith("> ");
