@@ -21,8 +21,8 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
             return false;
         }
         public bool CanParse(string line) =>
-            line.Contains("**") || line.Contains("*") || line.Contains("~") 
-            || line.Contains("+");
+            (line.Contains("**") || line.Contains("*") || line.Contains("~") 
+            || line.Contains("+")) &&(!line.StartsWith("\\"));
 
         public MarkupElement? Parse(string line)
         {

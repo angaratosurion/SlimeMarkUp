@@ -27,7 +27,10 @@ namespace SlimeMarkUp.Core
                 {
                     sb.Append(el.Content);
                 }
-
+                if (el.Tag == "raw")
+                {
+                    sb.Append(el.Content);
+                }
 
                 else
                 {
@@ -35,10 +38,7 @@ namespace SlimeMarkUp.Core
                     {
                         sb.Append($"<{el.Tag}>{el.Content}</{el.Tag}>");
                     }
-                    if (el.Tag=="text")
-                    {
-                        sb.Append(el.Content);
-                    }
+                    
                 }
             }
             return sb.ToString();

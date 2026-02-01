@@ -19,7 +19,8 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
         {
             return false;
         }
-        public bool CanParse(string line) => Regex.IsMatch(line, @"\[(.*?)\]\((.*?)\)");
+        public bool CanParse(string line) => (Regex.IsMatch(line, @"\[(.*?)\]\((.*?)\)"))
+            && (!line.StartsWith("\\"));
 
         public MarkupElement? Parse(string line) => null;
 

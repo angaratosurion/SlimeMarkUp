@@ -7,7 +7,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
     {
         private static readonly Regex  hrRegex = new Regex(
     @"^(?: {0,3})(?:(?:\* {0,2}){3,}|(?:- {0,2}){3,}|(?:_ {0,2}){3,})$",
-    RegexOptions.Multiline
+    RegexOptions.Compiled
 );
 
         public int Count { get; }
@@ -30,10 +30,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
 
             int tc =hrRegex.Matches(line).Count;
             return new MarkupElement
-            {
-                //Tag = "raw",
-                //Content = "<!-- start of file :"+ inputPath+" -->" + content+ "<!-- end of file : "+ inputPath 
-                //+" -->"
+            { 
                 Tag = "HorrizontalLine",
                 Content = "<hr/>"
 

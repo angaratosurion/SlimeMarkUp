@@ -1,3 +1,4 @@
+using SlimeMarkUp.Core.Extensions.SlimeMarkup;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,7 +16,8 @@ namespace SlimeMarkUp.Core
     public class MarkupParser
     {
         private readonly List<IBlockMarkupExtension> _extensions;
-
+        private static readonly Regex escaperegex =
+          new Regex(@"^(?:\s{0,3})\d+[.)]\s+", RegexOptions.Compiled);
         public MarkupParser(IEnumerable<IBlockMarkupExtension> extensions)
         {
             _extensions = extensions.OrderBy(x => x.Order).ToList();
@@ -34,8 +36,9 @@ namespace SlimeMarkUp.Core
             
 
             var elements = new List<MarkupElement>();
-            text=PreParse(text);
+             text=PreParse(text);
             var lines = new Queue<string>(text.Split('\n').Select(l => l.TrimEnd()));
+            
 
             while (lines.Count > 0)
             {
@@ -67,11 +70,11 @@ namespace SlimeMarkUp.Core
                 }
 
                 var matched = false;
+             
 
-                
-                 
-                foreach (var ext in _extensions)
+                    foreach (var ext in _extensions)
                     {
+ 
                         if (ext.CanParse(line))
                         {
                             var blockElements = ext.ParseBlock(lines);
@@ -85,12 +88,12 @@ namespace SlimeMarkUp.Core
                     
                 }
 
-                if (!matched)
+                if (!matched  )
                 {
                     // Default fallback: treat as paragraph
                    
                     var paragraph = lines.Dequeue();
-                    elements.Add(new MarkupElement { Tag = "p", Content = paragraph });
+                     elements.Add(new MarkupElement { Tag = "p", Content = paragraph });
                 }
             }
 
@@ -128,9 +131,10 @@ namespace SlimeMarkUp.Core
          
         string PreParse(string text)
         {
-            string ap="0";
+            string ap=" ";
             var lines = new Queue<string>(text.Split('\n').Select(l => l.TrimEnd()));
             var elements = new List<MarkupElement>();
+           
             while (lines.Count > 0)
             {
                 var line = lines.Peek();
@@ -140,10 +144,11 @@ namespace SlimeMarkUp.Core
                     lines.Dequeue();
                     continue;
                 }
-
+                
                 foreach (var ext in _extensions)
                 {
-                    if (ext.CanParse(line))
+                   
+                    if (ext.CanParse(line)  )
                     {
                         var blockElements = ext.ParseBlock(lines);
                         if (blockElements != null)
