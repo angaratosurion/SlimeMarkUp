@@ -35,6 +35,10 @@ namespace SlimeMarkUp.Core
                     {
                         sb.Append($"<{el.Tag}>{el.Content}</{el.Tag}>");
                     }
+                    if (el.Tag=="text")
+                    {
+                        sb.Append(el.Content);
+                    }
                 }
             }
             return sb.ToString();

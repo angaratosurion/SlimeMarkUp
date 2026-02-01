@@ -22,8 +22,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
         }
         public bool CanParse(string line) => line.TrimStart().StartsWith("- ");
 
-        public MarkupElement? Parse(string line) =>
-            throw new NotImplementedException("ListExtension only supports block parsing.");
+        public MarkupElement? Parse(string line) => null;
 
         public IEnumerable<MarkupElement>? ParseBlock(Queue<string> lines)
         {
