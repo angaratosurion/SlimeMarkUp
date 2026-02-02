@@ -1,0 +1,52 @@
+.TH "SlimeMarkUp.Core" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SlimeMarkUp.Core
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBExtensions\fP"
+.br
+.ti -1c
+.RI "namespace \fBModels\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDocumentPropertiesLoader\fP"
+.br
+.RI "Provides static methods for loading, serializing, and saving document properties in YAML format, including support for extracting properties from YAML front matter within a text document\&. "
+.ti -1c
+.RI "class \fBHtmlRenderer\fP"
+.br
+.RI "Provides functionality to render a collection of markup elements into an HTML string\&. "
+.ti -1c
+.RI "interface \fBIBlockMarkupExtension\fP"
+.br
+.ti -1c
+.RI "interface \fBIMarkupExtension\fP"
+.br
+.RI "Defines the contract for a markup extension that can parse and process markup lines within a document or text stream\&. "
+.ti -1c
+.RI "class \fBIncludeTagHandler\fP"
+.br
+.RI "Provides functionality to detect and process custom include tags within text lines, enabling the inclusion of external file content based on a specific markup pattern\&. "
+.ti -1c
+.RI "class \fBMarkupElement\fP"
+.br
+.RI "Represents an element in a markup structure, including its tag name, content, attributes, and child elements\&. "
+.ti -1c
+.RI "class \fBMarkupParser\fP"
+.br
+.RI "Provides functionality to parse custom markup text into a collection of structured markup elements, supporting extensible block-level parsing via registered markup extensions\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SlimeMarkUp from the source code\&.

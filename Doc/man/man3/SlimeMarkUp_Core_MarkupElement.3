@@ -1,0 +1,66 @@
+.TH "SlimeMarkUp.Core.MarkupElement" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SlimeMarkUp.Core.MarkupElement \- Represents an element in a markup structure, including its tag name, content, attributes, and child elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBTag\fP = 'p'\fR [get, set]\fP"
+.br
+.RI "Gets or sets the HTML tag name associated with the element\&. "
+.ti -1c
+.RI "string \fBContent\fP = ''\fR [get, set]\fP"
+.br
+.RI "Gets or sets the textual content associated with this instance\&. "
+.ti -1c
+.RI "Dictionary< string, string >? \fBAttributes\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets a collection of key-value pairs that represent custom attributes associated with the object\&. "
+.ti -1c
+.RI "List< \fBMarkupElement\fP >? \fBChildren\fP\fR [get, set]\fP"
+.br
+.RI "Gets or sets the collection of child markup elements contained within this element\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an element in a markup structure, including its tag name, content, attributes, and child elements\&. 
+
+Use this class to model hierarchical markup such as HTML or XML\&. Each instance can contain nested child elements, allowing for complex document structures\&. The class does not perform validation or rendering; it is intended for representing markup data in memory\&.
+.PP
+Definition at line \fB9\fP of file \fBMarkupElement\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "Dictionary<string, string>? SlimeMarkUp\&.Core\&.MarkupElement\&.Attributes\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets a collection of key-value pairs that represent custom attributes associated with the object\&. The dictionary keys and values are user-defined and may be used to store additional metadata\&. The property may be null if no attributes are set\&.
+.PP
+Definition at line \fB26\fP of file \fBMarkupElement\&.cs\fP\&.
+.SS "List<\fBMarkupElement\fP>? SlimeMarkUp\&.Core\&.MarkupElement\&.Children\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the collection of child markup elements contained within this element\&. The order of elements in the collection reflects their sequence within the parent markup element\&. The property may be null if there are no child elements\&.
+.PP
+Definition at line \fB32\fP of file \fBMarkupElement\&.cs\fP\&.
+.SS "string SlimeMarkUp\&.Core\&.MarkupElement\&.Content = ''\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the textual content associated with this instance\&. 
+.PP
+Definition at line \fB20\fP of file \fBMarkupElement\&.cs\fP\&.
+.SS "string SlimeMarkUp\&.Core\&.MarkupElement\&.Tag = 'p'\fR [get]\fP, \fR [set]\fP"
+
+.PP
+Gets or sets the HTML tag name associated with the element\&. The default value is 'p', representing a paragraph element\&. This property can be set to any valid HTML tag name to customize the type of element rendered\&.
+.PP
+Definition at line \fB16\fP of file \fBMarkupElement\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SlimeMarkUp from the source code\&.

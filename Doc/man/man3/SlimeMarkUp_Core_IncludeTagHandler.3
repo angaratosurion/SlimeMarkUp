@@ -1,0 +1,140 @@
+.TH "SlimeMarkUp.Core.IncludeTagHandler" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SlimeMarkUp.Core.IncludeTagHandler \- Provides functionality to detect and process custom include tags within text lines, enabling the inclusion of external file content based on a specific markup pattern\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBPriority\fP ()"
+.br
+.RI "Indicates whether the current item has priority status\&. "
+.ti -1c
+.RI "bool \fBCanParse\fP (string line)"
+.br
+.RI "Determines whether the specified line matches the criteria for parsing\&. "
+.ti -1c
+.RI "string \fBParse\fP (string line)"
+.br
+.RI "Parses the specified line to extract an include directive and returns the contents of the referenced file, wrapped with comment markers\&. "
+.ti -1c
+.RI "string \fBParseBlock\fP (Queue< string > lines)"
+.br
+.RI "Parses the first line from the specified queue and returns its processed representation\&. "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBOrder\fP\fR [get]\fP"
+.br
+.RI "Gets the order value used to determine the relative position or priority of this item\&. "
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides functionality to detect and process custom include tags within text lines, enabling the inclusion of external file content based on a specific markup pattern\&. 
+
+The include tag handler identifies lines containing an include directive in the format ' ' and replaces them with the contents of the specified file\&. This class is typically used in scenarios where dynamic content injection from external files is required, such as in markup or documentation processing workflows\&. The handler maintains a count of processed include tags and exposes properties to control parsing order and processing behavior\&.
+.PP
+Definition at line \fB18\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SlimeMarkUp\&.Core\&.IncludeTagHandler\&.CanParse (string line)"
+
+.PP
+Determines whether the specified line matches the criteria for parsing\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIline\fP The line of text to evaluate against the parsing criteria\&. Cannot be null\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the line matches the criteria and can be parsed; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB47\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+.SS "string SlimeMarkUp\&.Core\&.IncludeTagHandler\&.Parse (string line)"
+
+.PP
+Parses the specified line to extract an include directive and returns the contents of the referenced file, wrapped with comment markers\&. If the specified file does not exist or cannot be read, the returned string contains an HTML comment describing the error\&. The method does not throw exceptions for missing or unreadable files; instead, it returns an error message in the output\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIline\fP The line of text to parse for an include directive\&. Must contain a valid include pattern; otherwise, the method returns null\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A string containing the contents of the included file, wrapped with start and end comment markers\&. Returns null if the line does not contain a valid include directive\&. Returns an error comment if the file is not found or cannot be read\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+.SS "string SlimeMarkUp\&.Core\&.IncludeTagHandler\&.ParseBlock (Queue< string > lines)"
+
+.PP
+Parses the first line from the specified queue and returns its processed representation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue of strings containing lines to be parsed\&. Must not be empty\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A string representing the parsed result of the first line in the queue, or null if the queue is empty\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB117\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.IncludeTagHandler\&.Priority ()"
+
+.PP
+Indicates whether the current item has priority status\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRtrue\fP if the item is prioritized; otherwise, \fRfalse\fP\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB35\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SlimeMarkUp\&.Core\&.IncludeTagHandler\&.Count\fR [get]\fP"
+
+.PP
+Definition at line \fB129\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.IncludeTagHandler\&.IsToBeProccessed\fR [get]\fP"
+
+.PP
+Definition at line \fB134\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+.SS "int SlimeMarkUp\&.Core\&.IncludeTagHandler\&.Order\fR [get]\fP"
+
+.PP
+Gets the order value used to determine the relative position or priority of this item\&. 
+.PP
+Definition at line \fB24\fP of file \fBIncludeTagHandler\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SlimeMarkUp from the source code\&.

@@ -1,0 +1,66 @@
+.TH "SlimeMarkUp.Core.IBlockMarkupExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SlimeMarkUp.Core.IBlockMarkupExtension
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
+.PP
+Inherited by \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianBlockquoteExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianCodeBlockExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianHeaderExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianImageExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianInlineStyleExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianLinkExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.BlockquoteExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.ImageExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeCSSExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.InlineStyleExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.ListExtension\fP, and \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.TableExtension\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
+.in +1c
+.ti -1c
+.RI "bool \fBCanParse\fP (string line)"
+.br
+.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.ti -1c
+.RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
+.br
+.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.ti -1c
+.RI "bool \fBPriority\fP ()"
+.br
+.RI "Determines whether the current operation or item has priority status\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
+.in +1c
+.ti -1c
+.RI "int \fBOrder\fP\fR [get]\fP"
+.br
+.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements contained in the collection\&. "
+.ti -1c
+.RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB47\fP of file \fBIBlockMarkupExtension\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.IBlockMarkupExtension\&.ParseBlock (Queue< string > lines)"
+
+.PP
+Implemented in \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianBlockquoteExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianCodeBlockExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianHeaderExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianImageExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianInlineStyleExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianLinkExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.BlockquoteExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.ImageExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeCSSExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.InlineStyleExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\fP, \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.ListExtension\fP, and \fBSlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.TableExtension\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SlimeMarkUp from the source code\&.

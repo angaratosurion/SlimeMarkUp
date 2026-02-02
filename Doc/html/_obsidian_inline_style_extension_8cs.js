@@ -1,0 +1,4 @@
+var _obsidian_inline_style_extension_8cs =
+[
+    [ "SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianInlineStyleExtension", "class_slime_mark_up_1_1_core_1_1_extensions_1_1_obsidian_markup_1_1_obsidian_inline_style_extension.html", "class_slime_mark_up_1_1_core_1_1_extensions_1_1_obsidian_markup_1_1_obsidian_inline_style_extension" ]
+];

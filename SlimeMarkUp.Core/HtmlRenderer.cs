@@ -5,6 +5,13 @@ using System.Text;
 
 namespace SlimeMarkUp.Core
 {
+    /// <summary>
+    /// Provides functionality to render a collection of markup elements into an HTML string.
+    /// </summary>
+    /// <remarks>Use this class to convert a sequence of markup elements, such as images, tables, and
+    /// headings, into their corresponding HTML representation. The renderer handles specific tags with custom logic and
+    /// wraps other elements in their respective HTML tags. This class is not thread-safe; create a separate instance
+    /// for concurrent rendering operations.</remarks>
     public class HtmlRenderer
     {
         public string Render(IEnumerable<MarkupElement> elements)

@@ -1,5 +1,6 @@
 namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
 {
+   
     public class CodeBlockExtension : IBlockMarkupExtension
     {
         public int Count { get; }

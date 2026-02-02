@@ -1,0 +1,148 @@
+.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.HorizontalRuleExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SlimeMarkUp.Core.Extensions.SlimeMarkup.HorizontalRuleExtension \- Provides an extension for parsing blockquote-style horizontal rules in markup content\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBCanParse\fP (string line)"
+.br
+.RI "Determines whether the specified line represents a quoted block by checking if it begins with a greater-than sign followed by a space\&. "
+.ti -1c
+.RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
+.br
+.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.ti -1c
+.RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
+.br
+.ti -1c
+.RI "bool \fBPriority\fP ()"
+.br
+.RI "Determines whether the current operation or item has priority status\&. "
+.in -1c
+
+Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
+
+Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBCount\fP\fR [get]\fP"
+.br
+.RI "Gets the number of elements contained in the collection\&. "
+.ti -1c
+.RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
+.br
+.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.ti -1c
+.RI "int \fBOrder\fP\fR [get]\fP"
+.br
+.RI "Gets the order value associated with this instance\&. "
+.in -1c
+
+Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
+.SH "Detailed Description"
+.PP 
+Provides an extension for parsing blockquote-style horizontal rules in markup content\&. 
+
+Implements the \fBIBlockMarkupExtension\fP interface to support custom block-level markup parsing\&. This extension identifies lines starting with a blockquote marker ('> ') and processes them as horizontal rule elements\&. The extension can be used to customize how blockquotes or similar structures are handled during markup parsing\&.
+.PP
+Definition at line \fB12\fP of file \fBBlockquoteExtension\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\&.CanParse (string line)"
+
+.PP
+Determines whether the specified line represents a quoted block by checking if it begins with a greater-than sign followed by a space\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIline\fP The line of text to evaluate\&. Leading whitespace is ignored when determining if the line is a quoted block\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the trimmed line starts with '> '; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
+.SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\&.Parse (string line)"
+
+.PP
+Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+.RE
+.PP
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
+.SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\&.ParseBlock (Queue< string > lines)"
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+.PP
+Definition at line \fB43\fP of file \fBBlockquoteExtension\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\&.Priority ()"
+
+.PP
+Determines whether the current operation or item has priority status\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if the operation or item is considered a priority; otherwise, false\&.
+.RE
+.PP
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
+.PP
+Definition at line \fB65\fP of file \fBBlockquoteExtension\&.cs\fP\&.
+.SH "Property Documentation"
+.PP 
+.SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\&.Count\fR [get]\fP"
+
+.PP
+Gets the number of elements contained in the collection\&. 
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
+.PP
+Definition at line \fB17\fP of file \fBBlockquoteExtension\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\&.IsToBeProccessed\fR [get]\fP"
+
+.PP
+Gets a value indicating whether the item is marked to be processed\&. 
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
+.PP
+Definition at line \fB28\fP of file \fBBlockquoteExtension\&.cs\fP\&.
+.SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HorizontalRuleExtension\&.Order\fR [get]\fP"
+
+.PP
+Gets the order value associated with this instance\&. 
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
+.PP
+Definition at line \fB33\fP of file \fBBlockquoteExtension\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SlimeMarkUp from the source code\&.

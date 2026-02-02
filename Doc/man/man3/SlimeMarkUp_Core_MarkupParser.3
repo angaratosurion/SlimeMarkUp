@@ -1,0 +1,94 @@
+.TH "SlimeMarkUp.Core.MarkupParser" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SlimeMarkUp.Core.MarkupParser \- Provides functionality to parse custom markup text into a collection of structured markup elements, supporting extensible block-level parsing via registered markup extensions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMarkupParser\fP (IEnumerable< \fBIBlockMarkupExtension\fP > extensions)"
+.br
+.RI "Initializes a new instance of the \fBMarkupParser\fP class using the specified collection of block markup extensions\&. "
+.ti -1c
+.RI "List< \fBMarkupElement\fP > \fBParse\fP (string text)"
+.br
+.RI "Parses the specified markup text and returns a collection of markup elements representing its structure\&. "
+.ti -1c
+.RI "List< \fBMarkupElement\fP > \fBParse\fP (string text, string propfile)"
+.br
+.RI "Parses the specified markup text and returns a list of markup elements\&. Optionally saves extracted document properties to a file if a property file path is provided\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides functionality to parse custom markup text into a collection of structured markup elements, supporting extensible block-level parsing via registered markup extensions\&. 
+
+The \fBMarkupParser\fP supports extensibility by allowing custom implementations of \fBIBlockMarkupExtension\fP to be provided\&. These extensions are used to parse specific block-level constructs within the markup text\&. The parser also handles the removal of YAML front matter and document properties blocks, and includes support for processing include tags\&. Thread safety is not guaranteed; concurrent access to the same instance should be synchronized by the caller\&.
+.PP
+Definition at line \fB25\fP of file \fBMarkupParser\&.cs\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SlimeMarkUp\&.Core\&.MarkupParser\&.MarkupParser (IEnumerable< \fBIBlockMarkupExtension\fP > extensions)"
+
+.PP
+Initializes a new instance of the \fBMarkupParser\fP class using the specified collection of block markup extensions\&. The provided extensions determine how markup blocks are processed\&. The order in which extensions are applied may affect parsing results if multiple extensions handle similar markup\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIextensions\fP A collection of \fBIBlockMarkupExtension\fP instances to be used by the parser\&. The extensions are applied in ascending order based on their Order property\&. Cannot be null\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB39\fP of file \fBMarkupParser\&.cs\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "List< \fBMarkupElement\fP > SlimeMarkUp\&.Core\&.MarkupParser\&.Parse (string text)"
+
+.PP
+Parses the specified markup text and returns a collection of markup elements representing its structure\&. YAML front matter and document properties blocks at the beginning of the input are automatically excluded from parsing\&. Lines not recognized by registered extensions are treated as paragraphs by default\&. The method supports extensible parsing via registered markup extensions\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItext\fP The input text containing markup to be parsed\&. May include YAML front matter or document properties blocks, which will be ignored during parsing\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A list of \fBMarkupElement\fP objects representing the parsed elements of the markup text\&. The list will be empty if no elements are found\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBMarkupParser\&.cs\fP\&.
+.SS "List< \fBMarkupElement\fP > SlimeMarkUp\&.Core\&.MarkupParser\&.Parse (string text, string propfile)"
+
+.PP
+Parses the specified markup text and returns a list of markup elements\&. Optionally saves extracted document properties to a file if a property file path is provided\&. If \fIpropfile\fP  is not \fRnull\fP, any document properties found in the markup text are extracted and saved to the specified file before parsing the markup elements\&. The method does not validate the existence or accessibility of the file path\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItext\fP The markup text to parse\&. This text may contain embedded document properties in YAML format\&.
+.br
+\fIpropfile\fP The file path to which extracted document properties will be saved\&. If \fIpropfile\fP  is \fRnull\fP, document properties are not saved\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A list of \fBMarkupElement\fP objects representing the parsed elements from the markup text\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB141\fP of file \fBMarkupParser\&.cs\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SlimeMarkUp from the source code\&.
