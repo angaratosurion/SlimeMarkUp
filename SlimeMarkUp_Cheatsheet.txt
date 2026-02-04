@@ -1,4 +1,4 @@
-
+﻿
 SlimeMarkUp - Βασικό Cheatsheet Markdown → HTML
 
 ---
@@ -102,3 +102,26 @@ Blockquote
 Παράγει:
 
 <blockquote>Αυτό είναι ένα blockquote σε δύο γραμμές.</blockquote>
+
+---
+Παράγει: 
+
+<hr/>
+
+Το \ είναι ο escape χαρακτήρας οτί ειδικό χαρακτήρα έχει μετα τον εμφανίζει σαν απλό.
+
+<!--include: style: filename.css-->
+
+Παράγει: 
+
+<link rel="stylesheet" href="filename.css"/>
+
+<!--include script:filename/>
+
+Παράγει: 
+
+<script src ="filename"></script>
+
+<!--include:filename-->
+
+Εισάει τα περιεχόμενα του ααρχείου με το όνομα  filename  στο παρόν αρχείο 
