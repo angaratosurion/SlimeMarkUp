@@ -1,10 +1,13 @@
-﻿
-SlimeMarkUp - Βασικό Cheatsheet Markdown → HTML
+﻿Εντάξει, θα σταματήσω να χρησιμοποιώ έντονη γραφή (bold) στις απαντήσεις μου.
+
+Ακολουθεί το κείμενο για το SlimeMarkUp Cheatsheet και στις δύο γλώσσες, σε απλή μορφή χωρίς καμία μορφοποίηση:
 
 ---
 
-Πίνακας
+GREEK VERSION
+SlimeMarkUp - Βασικό Cheatsheet Markdown -> HTML
 
+Πίνακας
 | Κεφάλαιο | Σελίδα |
 |----------|--------|
 | Εισαγωγή | 1      |
@@ -13,115 +16,132 @@ SlimeMarkUp - Βασικό Cheatsheet Markdown → HTML
 Παράγει:
 
 <table>
-  <tr><td>Κεφάλαιο</td><td>Σελίδα</td></tr>
-  <tr><td>Εισαγωγή</td><td>1</td></tr>
-  <tr><td>Κεφάλαιο</td><td>2</td></tr>
+<tr><td>Κεφάλαιο</td><td>Σελίδα</td></tr>
+<tr><td>Εισαγωγή</td><td>1</td></tr>
+<tr><td>Κεφάλαιο</td><td>2</td></tr>
 </table>
-
----
 
 Λίστα
 
-- Στοιχείο 1
-- Στοιχείο 2
-- Στοιχείο 3
+* Στοιχείο 1
+* Στοιχείο 2
+* Στοιχείο 3
 
 Παράγει:
 
 <ul>
-  <li>Στοιχείο 1</li>
-  <li>Στοιχείο 2</li>
-  <li>Στοιχείο 3</li>
+<li>Στοιχείο 1</li>
+<li>Στοιχείο 2</li>
+<li>Στοιχείο 3</li>
 </ul>
 
----
-
 Σύνδεσμος
-
 [Κείμενο](https://example.com){target=_blank rel=noreferrer}
-
-Παράγει:
-
-<a href="https://example.com" target="_blank" rel="noreferrer">Κείμενο</a>
-
----
+Παράγει: <a href="[https://example.com](https://example.com)" target="_blank" rel="noreferrer">Κείμενο</a>
 
 Έντονη και πλάγια γραφή
-
 **έντονο** και *πλάγιο*
-
-Παράγει:
-
-<p><strong>έντονο</strong> και <em>πλάγιο</em></p>
-
----
+Παράγει: <p><strong>έντονο</strong> και <em>πλάγιο</em></p>
 
 Εικόνα
-
-![Alt Text](https://example.com/image.jpg){width=300 height=200}
-
-Παράγει:
-
-<img src="https://example.com/image.jpg" alt="Alt Text" width="300" height="200" />
-
----
+{width=300 height=200}
+Παράγει: <img src="[https://example.com/image.jpg](https://example.com/image.jpg)" alt="Alt Text" width="300" height="200" />
 
 Τίτλοι
 
 # Τίτλος 1
+
 ## Τίτλος 2
+
 ### Τίτλος 3
 
-Παράγει:
-
-<h1>Τίτλος 1</h1>
-<h2>Τίτλος 2</h2>
-<h3>Τίτλος 3</h3>
-
----
+Παράγει: <h1>, <h2>, <h3>
 
 Μπλοκ κώδικα
-
-```
-Console.WriteLine("Hello World");
-```
-
-Παράγει:
-
-<pre>
-Console.WriteLine("Hello World");
-</pre>
-
----
+`Console.WriteLine("Hello World");`
+Παράγει: <pre>Console.WriteLine("Hello World");</pre>
 
 Blockquote
 
-> Αυτό είναι ένα
-> blockquote σε δύο γραμμές.
+> Αυτό είναι ένα blockquote σε δύο γραμμές.
+> Παράγει: <blockquote>Αυτό είναι ένα blockquote σε δύο γραμμές.</blockquote>
 
-Παράγει:
-
-<blockquote>Αυτό είναι ένα blockquote σε δύο γραμμές.</blockquote>
+Λοιπά
+--- Παράγει: <hr/>
+\ : Escape χαρακτήρας (εμφανίζει τον επόμενο χαρακτήρα ως απλό κείμενο)
+Παράγει: <link rel="stylesheet" href="filename.css"/>
+Εισάγει τα περιεχόμενα του αρχείου filename
 
 ---
-Παράγει: 
 
-<hr/>
+ENGLISH VERSION
+SlimeMarkUp - Basic Markdown -> HTML Cheatsheet
 
-Το \ είναι ο escape χαρακτήρας οτί ειδικό χαρακτήρα έχει μετα τον εμφανίζει σαν απλό.
+Table
+| Chapter | Page |
+|---------|------|
+| Intro   | 1    |
+| Chapter | 2    |
 
-<!--include: style: filename.css-->
+Produces:
 
-Παράγει: 
+<table>
+<tr><td>Chapter</td><td>Page</td></tr>
+<tr><td>Intro</td><td>1</td></tr>
+<tr><td>Chapter</td><td>2</td></tr>
+</table>
 
-<link rel="stylesheet" href="filename.css"/>
+List
 
-<!--include script:filename/>
+* Item 1
+* Item 2
+* Item 3
 
-Παράγει: 
+Produces:
 
-<script src ="filename"></script>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
 
-<!--include:filename-->
+Link
+[Text](https://example.com){target=_blank rel=noreferrer}
+Produces: <a href="[https://example.com](https://example.com)" target="_blank" rel="noreferrer">Text</a>
 
-Εισάει τα περιεχόμενα του ααρχείου με το όνομα  filename  στο παρόν αρχείο 
+Bold and Italic
+**bold** and *italic*
+Produces: <p><strong>bold</strong> and <em>italic</em></p>
+
+Image
+{width=300 height=200}
+Produces: <img src="[https://example.com/image.jpg](https://example.com/image.jpg)" alt="Alt Text" width="300" height="200" />
+
+Headings
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+Produces: <h1>, <h2>, <h3>
+
+Code Block
+`Console.WriteLine("Hello World");`
+Produces: <pre>Console.WriteLine("Hello World");</pre>
+
+Blockquote
+
+> This is a blockquote on two lines.
+> Produces: <blockquote>This is a blockquote on two lines.</blockquote>
+
+Others
+--- Produces: <hr/>
+\ : Escape character (displays the next special character as plain text)
+Produces: <link rel="stylesheet" href="filename.css"/>
+Inserts the contents of the file named filename
+
+---
+
+Ελπίζω αυτή η μορφή να σε εξυπηρετεί καλύτερα. Χρειάζεσαι κάτι άλλο;
