@@ -1,8 +1,9 @@
-.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.EscapeCharsExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.EscapeCharsExtension" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-SlimeMarkUp.Core.Extensions.SlimeMarkup.EscapeCharsExtension
+SlimeMarkUp.Core.Extensions.SlimeMarkup.EscapeCharsExtension \- Markup extension that handles escaped or special character lines\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,18 +15,19 @@ Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .ti -1c
 .RI "bool \fBCanParse\fP (string line)"
 .br
-.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.RI "Determines whether the specified line can be parsed by this extension\&. "
 .ti -1c
 .RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
 .br
-.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.RI "Parses a single line\&. "
 .ti -1c
 .RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
 .br
+.RI "Parses a block from the provided queue of lines\&. "
 .ti -1c
 .RI "bool \fBPriority\fP ()"
 .br
-.RI "Determines whether the current operation or item has priority status\&. "
+.RI "Indicates whether this extension has priority over others\&. "
 .in -1c
 
 Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
@@ -37,110 +39,128 @@ Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\
 .ti -1c
 .RI "int \fBCount\fP\fR [get]\fP"
 .br
-.RI "Gets the number of elements contained in the collection\&. "
+.RI "Gets the number of parsed escape elements\&. "
 .ti -1c
 .RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
 .br
-.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.RI "Gets a value indicating whether the block should be processed immediately\&. "
 .ti -1c
 .RI "int \fBOrder\fP\fR [get]\fP"
 .br
-.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.RI "Gets the execution order of the extension\&. "
 .in -1c
 
 Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
 .SH "Detailed Description"
 .PP 
-Definition at line \fB6\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Markup extension that handles escaped or special character lines\&. 
+
+Currently, this extension is a placeholder for lines that should not be processed by other extensions, such as escaped numbered lists or custom escape sequences\&. 
+.PP
+Definition at line \fB14\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\&.CanParse (string line)"
 
 .PP
-Determines whether the specified line can be parsed by the current parser\&. 
+Determines whether the specified line can be parsed by this extension\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to evaluate for parse compatibility\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the line can be parsed; otherwise, false\&.
+Always returns \fRfalse\fP since this extension only processes blocks\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB11\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Definition at line \fB29\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 .SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\&.Parse (string line)"
 
 .PP
-Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+Parses a single line\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+Currently always returns \fRnull\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB14\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Definition at line \fB43\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 .SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\&.ParseBlock (Queue< string > lines)"
+
+.PP
+Parses a block from the provided queue of lines\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue containing the remaining lines of the document\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A collection containing the result of \fBParse(string)\fP\&. Currently always \fRnull\fP\&. 
+.RE
+.PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .PP
-Definition at line \fB24\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Definition at line \fB62\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\&.Priority ()"
 
 .PP
-Determines whether the current operation or item has priority status\&. 
+Indicates whether this extension has priority over others\&. 
 .PP
 \fBReturns\fP
 .RS 4
-true if the operation or item is considered a priority; otherwise, false\&.
+Always returns \fRfalse\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB31\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Definition at line \fB74\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\&.Count\fR [get]\fP"
 
 .PP
-Gets the number of elements contained in the collection\&. 
+Gets the number of parsed escape elements\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB10\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Definition at line \fB21\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\&.IsToBeProccessed\fR [get]\fP"
 
 .PP
-Gets a value indicating whether the item is marked to be processed\&. 
+Gets a value indicating whether the block should be processed immediately\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB12\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Definition at line \fB34\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.EscapeCharsExtension\&.Order\fR [get]\fP"
 
 .PP
-Gets the zero-based position of the item within its containing collection or sequence\&. 
+Gets the execution order of the extension\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB35\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
+Definition at line \fB81\fP of file \fBEscapeCharsExtension\&.cs\fP\&.
 
 .SH "Author"
 .PP 

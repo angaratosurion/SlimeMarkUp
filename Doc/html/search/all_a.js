@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['language_0',['Language',['../class_slime_mark_up_1_1_core_1_1_models_1_1_document_properties.html#a75d9bdfdcb19bed48a8bf832e992a878',1,'SlimeMarkUp::Core::Models::DocumentProperties']]],
-  ['linkextension_1',['LinkExtension',['../class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_link_extension.html',1,'SlimeMarkUp::Core::Extensions::SlimeMarkup']]],
-  ['linkextension_2ecs_2',['LinkExtension.cs',['../_link_extension_8cs.html',1,'']]],
-  ['listextension_3',['ListExtension',['../class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_list_extension.html',1,'SlimeMarkUp::Core::Extensions::SlimeMarkup']]],
-  ['listextension_2ecs_4',['ListExtension.cs',['../_list_extension_8cs.html',1,'']]]
+  ['header_201_0',['Header 1',['../D:/Cloud Folder/NextCloud/My Programs/dotNet/Open Source/SlimeMarkUp/SlimeMarkUp.Core/Extensions/SlimeMarkup/HeaderExtension.cs#autotoc_md0',1,'']]],
+  ['header_202_1',['Header 2',['../D:/Cloud Folder/NextCloud/My Programs/dotNet/Open Source/SlimeMarkUp/SlimeMarkUp.Core/Extensions/SlimeMarkup/HeaderExtension.cs#autotoc_md1',1,'']]],
+  ['header_203_2',['Header 3',['../D:/Cloud Folder/NextCloud/My Programs/dotNet/Open Source/SlimeMarkUp/SlimeMarkUp.Core/Extensions/SlimeMarkup/HeaderExtension.cs#autotoc_md2',1,'']]],
+  ['headerextension_3',['HeaderExtension',['../class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_header_extension.html',1,'SlimeMarkUp::Core::Extensions::SlimeMarkup']]],
+  ['headerextension_2ecs_4',['HeaderExtension.cs',['../_header_extension_8cs.html',1,'']]],
+  ['horizontalruleextension_5',['HorizontalRuleExtension',['../class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_horizontal_rule_extension.html',1,'SlimeMarkUp::Core::Extensions::SlimeMarkup']]],
+  ['horizontalruleextension_2ecs_6',['HorizontalRuleExtension.cs',['../_horizontal_rule_extension_8cs.html',1,'']]],
+  ['htmlrenderer_7',['HtmlRenderer',['../class_slime_mark_up_1_1_core_1_1_html_renderer.html',1,'SlimeMarkUp::Core']]],
+  ['htmlrenderer_2ecs_8',['HtmlRenderer.cs',['../_html_renderer_8cs.html',1,'']]]
 ];

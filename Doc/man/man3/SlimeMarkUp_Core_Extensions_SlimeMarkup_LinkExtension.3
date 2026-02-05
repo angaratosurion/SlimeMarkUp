@@ -1,8 +1,9 @@
-.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.LinkExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.LinkExtension" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-SlimeMarkUp.Core.Extensions.SlimeMarkup.LinkExtension
+SlimeMarkUp.Core.Extensions.SlimeMarkup.LinkExtension \- A markup extension that parses Markdown-style links and converts them to HTML anchor (<a>) tags\&. Supports optional inline attributes in the format {key=value key2=value2}\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,18 +15,19 @@ Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .ti -1c
 .RI "bool \fBPriority\fP ()"
 .br
-.RI "Determines whether the current operation or item has priority status\&. "
+.RI "Determines whether this extension has priority over others\&. Always returns \fRfalse\fP\&. "
 .ti -1c
 .RI "bool \fBCanParse\fP (string line)"
 .br
-.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.RI "Determines if a line of text can be parsed as a link by this extension\&. Lines matching the Markdown link pattern [text](url) are parseable, unless they start with a backslash (), which escapes the syntax\&. "
 .ti -1c
 .RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
 .br
-.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.RI "Parses a single line as a link\&. Currently not implemented; always returns \fRnull\fP\&. "
 .ti -1c
 .RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
 .br
+.RI "Parses a block of lines from a queue, extracting Markdown-style links and converting them to HTML <a> tags\&. Optional inline attributes in the format {key=value key2=value2} are appended to the anchor tag\&. "
 .in -1c
 
 Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
@@ -37,36 +39,38 @@ Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\
 .ti -1c
 .RI "int \fBCount\fP\fR [get]\fP"
 .br
-.RI "Gets the number of elements contained in the collection\&. "
+.RI "Gets the number of links processed\&. Currently always returns 0 because counting is not implemented\&. "
 .ti -1c
 .RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
 .br
-.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.RI "Indicates whether this extension should be processed\&. Always returns \fRfalse\fP\&. "
 .ti -1c
 .RI "int \fBOrder\fP\fR [get]\fP"
 .br
-.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.RI "Gets the order in which this extension should be applied relative to others\&. Lower numbers are processed earlier\&. This extension has an order of 2\&. "
 .in -1c
 
 Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
 .SH "Detailed Description"
 .PP 
-Definition at line \fB6\fP of file \fBLinkExtension\&.cs\fP\&.
+A markup extension that parses Markdown-style links and converts them to HTML anchor (<a>) tags\&. Supports optional inline attributes in the format {key=value key2=value2}\&. 
+.PP
+Definition at line \fB10\fP of file \fBLinkExtension\&.cs\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.CanParse (string line)"
 
 .PP
-Determines whether the specified line can be parsed by the current parser\&. 
+Determines if a line of text can be parsed as a link by this extension\&. Lines matching the Markdown link pattern [text](url) are parseable, unless they start with a backslash (), which escapes the syntax\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to evaluate for parse compatibility\&. Cannot be null\&.
+\fIline\fP The line of text to check\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the line can be parsed; otherwise, false\&.
+\fRtrue\fP if the line contains a Markdown-style link; otherwise, \fRfalse\fP\&.
 .RE
 .PP
 
@@ -75,16 +79,16 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.Parse (string line)"
 
 .PP
-Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+Parses a single line as a link\&. Currently not implemented; always returns \fRnull\fP\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+\fIline\fP The line of text to parse\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+\fRnull\fP
 .RE
 .PP
 
@@ -93,50 +97,64 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.ParseBlock (Queue< string > lines)"
 
 .PP
-Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+Parses a block of lines from a queue, extracting Markdown-style links and converting them to HTML <a> tags\&. Optional inline attributes in the format {key=value key2=value2} are appended to the anchor tag\&. 
 .PP
-Definition at line \fB27\fP of file \fBLinkExtension\&.cs\fP\&.
-.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.Priority ()"
-
-.PP
-Determines whether the current operation or item has priority status\&. 
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue of lines to parse\&.
+.RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the operation or item is considered a priority; otherwise, false\&.
+An enumerable containing a single \fBMarkupElement\fP with the generated HTML anchor tag\&.
+.RE
+.PP
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+.PP
+Definition at line \fB67\fP of file \fBLinkExtension\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.Priority ()"
+
+.PP
+Determines whether this extension has priority over others\&. Always returns \fRfalse\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fRfalse\fP
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB18\fP of file \fBLinkExtension\&.cs\fP\&.
+Definition at line \fB39\fP of file \fBLinkExtension\&.cs\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.Count\fR [get]\fP"
 
 .PP
-Gets the number of elements contained in the collection\&. 
+Gets the number of links processed\&. Currently always returns 0 because counting is not implemented\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB8\fP of file \fBLinkExtension\&.cs\fP\&.
+Definition at line \fB16\fP of file \fBLinkExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.IsToBeProccessed\fR [get]\fP"
 
 .PP
-Gets a value indicating whether the item is marked to be processed\&. 
+Indicates whether this extension should be processed\&. Always returns \fRfalse\fP\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB9\fP of file \fBLinkExtension\&.cs\fP\&.
+Definition at line \fB21\fP of file \fBLinkExtension\&.cs\fP\&.
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.LinkExtension\&.Order\fR [get]\fP"
 
 .PP
-Gets the zero-based position of the item within its containing collection or sequence\&. 
+Gets the order in which this extension should be applied relative to others\&. Lower numbers are processed earlier\&. This extension has an order of 2\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB11\fP of file \fBLinkExtension\&.cs\fP\&.
+Definition at line \fB27\fP of file \fBLinkExtension\&.cs\fP\&.
 
 .SH "Author"
 .PP 

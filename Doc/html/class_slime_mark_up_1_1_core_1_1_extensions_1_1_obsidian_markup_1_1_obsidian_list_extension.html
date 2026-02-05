@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.6.5</span>
+   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.7.0</span>
    </div>
   </td>
  </tr>
@@ -103,6 +103,9 @@ $(function(){initNavTree('class_slime_mark_up_1_1_core_1_1_extensions_1_1_obsidi
   <div class="headertitle"><div class="title">SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianListExtension Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Markup extension that parses unordered lists using dash-prefixed items.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianListExtension:</div>
 <div class="dyncontent">
@@ -117,15 +120,16 @@ Inheritance diagram for SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianListE
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a34bc6ba86439c05e15f0f386fbd789e2" id="r_a34bc6ba86439c05e15f0f386fbd789e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34bc6ba86439c05e15f0f386fbd789e2">Priority</a> ()</td></tr>
-<tr class="memdesc:a34bc6ba86439c05e15f0f386fbd789e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current operation or item has priority status.  <br /></td></tr>
+<tr class="memdesc:a34bc6ba86439c05e15f0f386fbd789e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this extension has priority over others.  <br /></td></tr>
 <tr class="separator:a34bc6ba86439c05e15f0f386fbd789e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa399acdbf03d1305e35af0f74e43462a" id="r_aa399acdbf03d1305e35af0f74e43462a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa399acdbf03d1305e35af0f74e43462a">CanParse</a> (string line)</td></tr>
-<tr class="memdesc:aa399acdbf03d1305e35af0f74e43462a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified line can be parsed by the current parser.  <br /></td></tr>
+<tr class="memdesc:aa399acdbf03d1305e35af0f74e43462a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified line can be parsed as the start of an unordered list.  <br /></td></tr>
 <tr class="separator:aa399acdbf03d1305e35af0f74e43462a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a762db004efb94d42efba67f2cfb14fea" id="r_a762db004efb94d42efba67f2cfb14fea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a762db004efb94d42efba67f2cfb14fea">Parse</a> (string line)</td></tr>
-<tr class="memdesc:a762db004efb94d42efba67f2cfb14fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the specified line of text and returns a corresponding inline markup element if recognized.  <br /></td></tr>
+<tr class="memdesc:a762db004efb94d42efba67f2cfb14fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a single line.  <br /></td></tr>
 <tr class="separator:a762db004efb94d42efba67f2cfb14fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77bc668cfe5ea7174bfceb39aeb2ef8c" id="r_a77bc668cfe5ea7174bfceb39aeb2ef8c"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77bc668cfe5ea7174bfceb39aeb2ef8c">ParseBlock</a> (Queue&lt; string &gt; lines)</td></tr>
+<tr class="memdesc:a77bc668cfe5ea7174bfceb39aeb2ef8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses an unordered list block from the provided queue of lines.  <br /></td></tr>
 <tr class="separator:a77bc668cfe5ea7174bfceb39aeb2ef8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html">SlimeMarkUp.Core.IBlockMarkupExtension</a></td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
@@ -133,19 +137,24 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a00fdd4d3636ae957ae630e710212fecd" id="r_a00fdd4d3636ae957ae630e710212fecd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00fdd4d3636ae957ae630e710212fecd">Count</a><code> [get]</code></td></tr>
-<tr class="memdesc:a00fdd4d3636ae957ae630e710212fecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the collection.  <br /></td></tr>
+<tr class="memdesc:a00fdd4d3636ae957ae630e710212fecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of parsed list elements.  <br /></td></tr>
 <tr class="separator:a00fdd4d3636ae957ae630e710212fecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b3cfc89f364d52c877bbb32bbd9888e" id="r_a2b3cfc89f364d52c877bbb32bbd9888e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b3cfc89f364d52c877bbb32bbd9888e">IsToBeProccessed</a><code> [get]</code></td></tr>
-<tr class="memdesc:a2b3cfc89f364d52c877bbb32bbd9888e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the item is marked to be processed.  <br /></td></tr>
+<tr class="memdesc:a2b3cfc89f364d52c877bbb32bbd9888e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the block should be processed immediately.  <br /></td></tr>
 <tr class="separator:a2b3cfc89f364d52c877bbb32bbd9888e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade192a2299197d0e1b743f9be2671ee4" id="r_ade192a2299197d0e1b743f9be2671ee4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade192a2299197d0e1b743f9be2671ee4">Order</a><code> [get]</code></td></tr>
-<tr class="memdesc:ade192a2299197d0e1b743f9be2671ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the zero-based position of the item within its containing collection or sequence.  <br /></td></tr>
+<tr class="memdesc:ade192a2299197d0e1b743f9be2671ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the execution order of the extension.  <br /></td></tr>
 <tr class="separator:ade192a2299197d0e1b743f9be2671ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00007">7</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
+<div class="textblock"><p>Markup extension that parses unordered lists using dash-prefixed items. </p>
+<p>Supported syntax: </p><div class="fragment"><div class="line">- First item</div>
+<div class="line">- Second item</div>
+<div class="line">- Third item</div>
+</div><!-- fragment --> <p>Each list item must start with <code>- </code>. Nested lists and alternative list markers are not supported. </p>
+
+<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00022">22</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa399acdbf03d1305e35af0f74e43462a" name="aa399acdbf03d1305e35af0f74e43462a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa399acdbf03d1305e35af0f74e43462a">&#9670;&#160;</a></span>CanParse()</h2>
@@ -162,14 +171,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the specified line can be parsed by the current parser. </p>
+<p>Determines whether the specified line can be parsed as the start of an unordered list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to evaluate for parse compatibility. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The input line.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the line can be parsed; otherwise, false.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the line starts with <code>- </code>; otherwise, <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a08dea833e009d5cca04a74b2bce4e083">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
@@ -190,14 +199,20 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Parses the specified line of text and returns a corresponding inline markup element if recognized. </p>
+<p>Parses a single line. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to parse for inline markup. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The input line.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> representing the parsed inline markup element, or <code>null</code> if the line does not contain a recognized markup element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This method is not supported for list parsing. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotImplementedException</td><td>Thrown because lists are parsed only as block elements. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a3855ce902b552b9649afe7b99606b370">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
@@ -218,9 +233,18 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Parses an unordered list block from the provided queue of lines. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lines</td><td>A queue containing the remaining lines of the document. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A collection containing a single <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> with the <code>ul</code> tag and its list items as content, or <code>null</code> if no list items are found. </dd></dl>
+
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html#abbb922714495dc42df0d46682f60b3b8">SlimeMarkUp.Core.IBlockMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00028">28</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00087">87</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -239,12 +263,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the current operation or item has priority status. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operation or item is considered a priority; otherwise, false.</dd></dl>
+<p>Indicates whether this extension has priority over others. </p>
+<dl class="section return"><dt>Returns</dt><dd>Always returns <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a890d2cdc164ad751edcc418f9a5fdd36">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00019">19</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00050">50</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -269,11 +293,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of elements contained in the collection. </p>
+<p>Gets the number of parsed list elements. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#afbc81e270aeae041652a5e7662d84b57">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00009">9</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00027">27</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -297,11 +321,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value indicating whether the item is marked to be processed. </p>
+<p>Gets a value indicating whether the block should be processed immediately. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a6bf2df09c788ce61fd1edfa3db6f5479">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00010">10</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00032">32</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -325,11 +349,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the zero-based position of the item within its containing collection or sequence. </p>
+<p>Gets the execution order of the extension. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#aca804889976a704ede455ba06d272c9f">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00012">12</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_list_extension_8cs_source.html#l00037">37</a> of file <a class="el" href="_obsidian_list_extension_8cs_source.html">ObsidianListExtension.cs</a>.</p>
 
 </div>
 </div>

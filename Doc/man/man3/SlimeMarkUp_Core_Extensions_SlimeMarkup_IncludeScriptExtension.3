@@ -1,8 +1,9 @@
-.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.IncludeScriptExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.IncludeScriptExtension" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-SlimeMarkUp.Core.Extensions.SlimeMarkup.IncludeScriptExtension
+SlimeMarkUp.Core.Extensions.SlimeMarkup.IncludeScriptExtension \- Markup extension that allows including external JavaScript files using a special comment syntax\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,18 +15,19 @@ Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .ti -1c
 .RI "bool \fBPriority\fP ()"
 .br
-.RI "Determines whether the current operation or item has priority status\&. "
+.RI "Indicates whether this extension has priority over others\&. "
 .ti -1c
 .RI "bool \fBCanParse\fP (string line)"
 .br
-.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.RI "Determines whether the specified line contains a script include directive\&. "
 .ti -1c
 .RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
 .br
-.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.RI "Parses a single line containing a script include directive\&. "
 .ti -1c
 .RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
 .br
+.RI "Parses a block containing a script include directive from the provided queue of lines\&. "
 .in -1c
 
 Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
@@ -37,110 +39,140 @@ Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\
 .ti -1c
 .RI "int \fBOrder\fP\fR [get]\fP"
 .br
-.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.RI "Gets the execution order of the extension\&. "
 .ti -1c
 .RI "int \fBCount\fP\fR [get]\fP"
 .br
-.RI "Gets the number of elements contained in the collection\&. "
+.RI "Gets the number of script include elements processed by this extension\&. "
 .ti -1c
 .RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
 .br
-.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.RI "Gets a value indicating whether the block should be processed immediately\&. "
 .in -1c
 
 Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
 .SH "Detailed Description"
 .PP 
-Definition at line \fB8\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Markup extension that allows including external JavaScript files using a special comment syntax\&. 
+
+Supported syntax: 
+.PP
+.nf
+
+.fi
+.PP
+ 
+
+.PP
+The path is resolved to an absolute path\&. If the file exists, a \fRscript\fP element is generated with a \fRsrc\fP attribute\&. Otherwise, an HTML comment indicating an error is returned\&. 
+
+.PP
+This extension has priority and is processed before other extensions\&. 
+.PP
+Definition at line \fB24\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\&.CanParse (string line)"
 
 .PP
-Determines whether the specified line can be parsed by the current parser\&. 
+Determines whether the specified line contains a script include directive\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to evaluate for parse compatibility\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the line can be parsed; otherwise, false\&.
+\fRtrue\fP if the line matches \fR<!-- include script: \&.\&.\&. -->\fP; otherwise, \fRfalse\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB26\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Definition at line \fB57\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 .SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\&.Parse (string line)"
 
 .PP
-Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+Parses a single line containing a script include directive\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+A \fBMarkupElement\fP with \fRscript\fP tag and \fRsrc\fP attribute pointing to the file, or an HTML comment indicating an error if the file cannot be found\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB31\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Definition at line \fB69\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 .SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\&.ParseBlock (Queue< string > lines)"
+
+.PP
+Parses a block containing a script include directive from the provided queue of lines\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue containing the remaining lines of the document\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A collection containing a single \fBMarkupElement\fP for the script include, or \fRnull\fP if no match is found\&. 
+.RE
+.PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .PP
-Definition at line \fB83\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Definition at line \fB128\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\&.Priority ()"
 
 .PP
-Determines whether the current operation or item has priority status\&. 
+Indicates whether this extension has priority over others\&. 
 .PP
 \fBReturns\fP
 .RS 4
-true if the operation or item is considered a priority; otherwise, false\&.
+Always returns \fRtrue\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB19\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Definition at line \fB43\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\&.Count\fR [get]\fP"
 
 .PP
-Gets the number of elements contained in the collection\&. 
+Gets the number of script include elements processed by this extension\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB95\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Definition at line \fB142\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\&.IsToBeProccessed\fR [get]\fP"
 
 .PP
-Gets a value indicating whether the item is marked to be processed\&. 
+Gets a value indicating whether the block should be processed immediately\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB100\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Definition at line \fB149\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.IncludeScriptExtension\&.Order\fR [get]\fP"
 
 .PP
-Gets the zero-based position of the item within its containing collection or sequence\&. 
+Gets the execution order of the extension\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB12\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
+Definition at line \fB30\fP of file \fBIncludeScriptExtension\&.cs\fP\&.
 
 .SH "Author"
 .PP 

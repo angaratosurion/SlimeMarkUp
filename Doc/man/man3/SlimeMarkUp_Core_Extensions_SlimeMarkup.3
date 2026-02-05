@@ -1,4 +1,4 @@
-.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,15 +12,19 @@ SlimeMarkUp.Core.Extensions.SlimeMarkup
 .ti -1c
 .RI "class \fBBlockquoteExtension\fP"
 .br
+.RI "Markup extension that parses horizontal rules in Markdown\&. "
 .ti -1c
 .RI "class \fBCodeBlockExtension\fP"
 .br
+.RI "Markup extension that parses fenced code blocks using triple backticks\&. "
 .ti -1c
 .RI "class \fBEscapeCharsExtension\fP"
 .br
+.RI "Markup extension that handles escaped or special character lines\&. "
 .ti -1c
 .RI "class \fBHeaderExtension\fP"
 .br
+.RI "Markup extension that parses Markdown headers using hash (#) symbols\&. "
 .ti -1c
 .RI "class \fBHorizontalRuleExtension\fP"
 .br
@@ -28,27 +32,35 @@ SlimeMarkUp.Core.Extensions.SlimeMarkup
 .ti -1c
 .RI "class \fBImageExtension\fP"
 .br
+.RI "Markup extension that parses Markdown/Obsidian-style images\&. "
 .ti -1c
 .RI "class \fBIncludeCSSExtension\fP"
 .br
+.RI "Markup extension that allows including external CSS files using a special comment syntax\&. "
 .ti -1c
 .RI "class \fBIncludeExtension\fP"
 .br
+.RI "Markup extension that allows including external files into the document using a special comment syntax\&. "
 .ti -1c
 .RI "class \fBIncludeScriptExtension\fP"
 .br
+.RI "Markup extension that allows including external JavaScript files using a special comment syntax\&. "
 .ti -1c
 .RI "class \fBInlineStyleExtension\fP"
 .br
+.RI "A markup extension that parses inline style elements in a line of text and converts them to HTML-like tags\&. Supports bold (\fBtext\fP), italic (\fItext\fP), strikethrough (text), and underline (++text++)\&. "
 .ti -1c
 .RI "class \fBLinkExtension\fP"
 .br
+.RI "A markup extension that parses Markdown-style links and converts them to HTML anchor (<a>) tags\&. Supports optional inline attributes in the format {key=value key2=value2}\&. "
 .ti -1c
 .RI "class \fBListExtension\fP"
 .br
+.RI "A markup extension that parses Markdown-style unordered lists and converts them to HTML <ul> and <li> tags\&. Supports list items starting with '- ' and stops parsing at empty lines or non-list lines\&. "
 .ti -1c
 .RI "class \fBTableExtension\fP"
 .br
+.RI "A markup extension that parses Markdown-style tables and converts them to HTML <table>, <tr>, and <td> elements\&. Supports rows starting with '|' and ignores separator rows consisting only of '-' or '=' characters\&. "
 .in -1c
 .SH "Author"
 .PP 

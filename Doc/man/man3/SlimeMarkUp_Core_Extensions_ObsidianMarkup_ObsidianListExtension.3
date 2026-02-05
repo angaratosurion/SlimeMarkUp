@@ -1,8 +1,9 @@
-.TH "SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianListExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianListExtension" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianListExtension
+SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianListExtension \- Markup extension that parses unordered lists using dash-prefixed items\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,18 +15,19 @@ Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .ti -1c
 .RI "bool \fBPriority\fP ()"
 .br
-.RI "Determines whether the current operation or item has priority status\&. "
+.RI "Indicates whether this extension has priority over others\&. "
 .ti -1c
 .RI "bool \fBCanParse\fP (string line)"
 .br
-.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.RI "Determines whether the specified line can be parsed as the start of an unordered list\&. "
 .ti -1c
 .RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
 .br
-.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.RI "Parses a single line\&. "
 .ti -1c
 .RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
 .br
+.RI "Parses an unordered list block from the provided queue of lines\&. "
 .in -1c
 
 Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
@@ -37,36 +39,52 @@ Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\
 .ti -1c
 .RI "int \fBCount\fP\fR [get]\fP"
 .br
-.RI "Gets the number of elements contained in the collection\&. "
+.RI "Gets the number of parsed list elements\&. "
 .ti -1c
 .RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
 .br
-.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.RI "Gets a value indicating whether the block should be processed immediately\&. "
 .ti -1c
 .RI "int \fBOrder\fP\fR [get]\fP"
 .br
-.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.RI "Gets the execution order of the extension\&. "
 .in -1c
 
 Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
 .SH "Detailed Description"
 .PP 
-Definition at line \fB7\fP of file \fBObsidianListExtension\&.cs\fP\&.
+Markup extension that parses unordered lists using dash-prefixed items\&. 
+
+Supported syntax: 
+.PP
+.nf
+\- First item
+\- Second item
+\- Third item
+
+.fi
+.PP
+ 
+
+.PP
+Each list item must start with \fR- \fP\&. Nested lists and alternative list markers are not supported\&. 
+.PP
+Definition at line \fB22\fP of file \fBObsidianListExtension\&.cs\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.CanParse (string line)"
 
 .PP
-Determines whether the specified line can be parsed by the current parser\&. 
+Determines whether the specified line can be parsed as the start of an unordered list\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to evaluate for parse compatibility\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the line can be parsed; otherwise, false\&.
+\fRtrue\fP if the line starts with \fR- \fP; otherwise, \fRfalse\fP\&. 
 .RE
 .PP
 
@@ -75,16 +93,21 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.Parse (string line)"
 
 .PP
-Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+Parses a single line\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+This method is not supported for list parsing\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fINotImplementedException\fP Thrown because lists are parsed only as block elements\&. 
 .RE
 .PP
 
@@ -93,50 +116,64 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.ParseBlock (Queue< string > lines)"
 
 .PP
-Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+Parses an unordered list block from the provided queue of lines\&. 
 .PP
-Definition at line \fB28\fP of file \fBObsidianListExtension\&.cs\fP\&.
-.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.Priority ()"
-
-.PP
-Determines whether the current operation or item has priority status\&. 
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue containing the remaining lines of the document\&. 
+.RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the operation or item is considered a priority; otherwise, false\&.
+A collection containing a single \fBMarkupElement\fP with the \fRul\fP tag and its list items as content, or \fRnull\fP if no list items are found\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+.PP
+Definition at line \fB87\fP of file \fBObsidianListExtension\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.Priority ()"
+
+.PP
+Indicates whether this extension has priority over others\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Always returns \fRfalse\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB19\fP of file \fBObsidianListExtension\&.cs\fP\&.
+Definition at line \fB50\fP of file \fBObsidianListExtension\&.cs\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.Count\fR [get]\fP"
 
 .PP
-Gets the number of elements contained in the collection\&. 
+Gets the number of parsed list elements\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB9\fP of file \fBObsidianListExtension\&.cs\fP\&.
+Definition at line \fB27\fP of file \fBObsidianListExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.IsToBeProccessed\fR [get]\fP"
 
 .PP
-Gets a value indicating whether the item is marked to be processed\&. 
+Gets a value indicating whether the block should be processed immediately\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB10\fP of file \fBObsidianListExtension\&.cs\fP\&.
+Definition at line \fB32\fP of file \fBObsidianListExtension\&.cs\fP\&.
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianListExtension\&.Order\fR [get]\fP"
 
 .PP
-Gets the zero-based position of the item within its containing collection or sequence\&. 
+Gets the execution order of the extension\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB12\fP of file \fBObsidianListExtension\&.cs\fP\&.
+Definition at line \fB37\fP of file \fBObsidianListExtension\&.cs\fP\&.
 
 .SH "Author"
 .PP 

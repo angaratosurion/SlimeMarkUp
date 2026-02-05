@@ -1,4 +1,4 @@
-.TH "SlimeMarkUp.Core.HtmlRenderer" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.HtmlRenderer" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,6 +13,7 @@ SlimeMarkUp.Core.HtmlRenderer \- Provides functionality to render a collection o
 .ti -1c
 .RI "string \fBRender\fP (IEnumerable< \fBMarkupElement\fP > elements)"
 .br
+.RI "Renders a collection of \fBMarkupElement\fP objects into an HTML string\&. Handles specific tags like images, tables, links, iframes, raw HTML, and headers, while wrapping other elements with their corresponding HTML tags\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -26,7 +27,21 @@ Definition at line \fB15\fP of file \fBHtmlRenderer\&.cs\fP\&.
 .SS "string SlimeMarkUp\&.Core\&.HtmlRenderer\&.Render (IEnumerable< \fBMarkupElement\fP > elements)"
 
 .PP
-Definition at line \fB17\fP of file \fBHtmlRenderer\&.cs\fP\&.
+Renders a collection of \fBMarkupElement\fP objects into an HTML string\&. Handles specific tags like images, tables, links, iframes, raw HTML, and headers, while wrapping other elements with their corresponding HTML tags\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIelements\fP The collection of \fBMarkupElement\fP objects to render\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A string containing the rendered HTML of all elements\&.
+.RE
+.PP
+
+.PP
+Definition at line \fB24\fP of file \fBHtmlRenderer\&.cs\fP\&.
 
 .SH "Author"
 .PP 

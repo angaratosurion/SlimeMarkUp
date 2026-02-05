@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.6.5</span>
+   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.7.0</span>
    </div>
   </td>
  </tr>
@@ -103,6 +103,9 @@ $(function(){initNavTree('class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_
   <div class="headertitle"><div class="title">SlimeMarkUp.Core.Extensions.SlimeMarkup.IncludeScriptExtension Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Markup extension that allows including external JavaScript files using a special comment syntax.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SlimeMarkUp.Core.Extensions.SlimeMarkup.IncludeScriptExtension:</div>
 <div class="dyncontent">
@@ -117,15 +120,16 @@ Inheritance diagram for SlimeMarkUp.Core.Extensions.SlimeMarkup.IncludeScriptExt
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a858de76fd771813f0041a7fd84e73889" id="r_a858de76fd771813f0041a7fd84e73889"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a858de76fd771813f0041a7fd84e73889">Priority</a> ()</td></tr>
-<tr class="memdesc:a858de76fd771813f0041a7fd84e73889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current operation or item has priority status.  <br /></td></tr>
+<tr class="memdesc:a858de76fd771813f0041a7fd84e73889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this extension has priority over others.  <br /></td></tr>
 <tr class="separator:a858de76fd771813f0041a7fd84e73889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0007c0cf8b5590d06eed8509b891cac2" id="r_a0007c0cf8b5590d06eed8509b891cac2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0007c0cf8b5590d06eed8509b891cac2">CanParse</a> (string line)</td></tr>
-<tr class="memdesc:a0007c0cf8b5590d06eed8509b891cac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified line can be parsed by the current parser.  <br /></td></tr>
+<tr class="memdesc:a0007c0cf8b5590d06eed8509b891cac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified line contains a script include directive.  <br /></td></tr>
 <tr class="separator:a0007c0cf8b5590d06eed8509b891cac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6967a563000ffbd51f418213338e3df6" id="r_a6967a563000ffbd51f418213338e3df6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6967a563000ffbd51f418213338e3df6">Parse</a> (string line)</td></tr>
-<tr class="memdesc:a6967a563000ffbd51f418213338e3df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the specified line of text and returns a corresponding inline markup element if recognized.  <br /></td></tr>
+<tr class="memdesc:a6967a563000ffbd51f418213338e3df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a single line containing a script include directive.  <br /></td></tr>
 <tr class="separator:a6967a563000ffbd51f418213338e3df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32a924d5f82b6f02bd56055d5b711c85" id="r_a32a924d5f82b6f02bd56055d5b711c85"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32a924d5f82b6f02bd56055d5b711c85">ParseBlock</a> (Queue&lt; string &gt; lines)</td></tr>
+<tr class="memdesc:a32a924d5f82b6f02bd56055d5b711c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a block containing a script include directive from the provided queue of lines.  <br /></td></tr>
 <tr class="separator:a32a924d5f82b6f02bd56055d5b711c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html">SlimeMarkUp.Core.IBlockMarkupExtension</a></td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
@@ -133,19 +137,22 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a4568b04c25f81ac3fec900d5a05e46e9" id="r_a4568b04c25f81ac3fec900d5a05e46e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4568b04c25f81ac3fec900d5a05e46e9">Order</a><code> [get]</code></td></tr>
-<tr class="memdesc:a4568b04c25f81ac3fec900d5a05e46e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the zero-based position of the item within its containing collection or sequence.  <br /></td></tr>
+<tr class="memdesc:a4568b04c25f81ac3fec900d5a05e46e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the execution order of the extension.  <br /></td></tr>
 <tr class="separator:a4568b04c25f81ac3fec900d5a05e46e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0c83e5b2882e1d2b5ccb3e616c30d76" id="r_ad0c83e5b2882e1d2b5ccb3e616c30d76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0c83e5b2882e1d2b5ccb3e616c30d76">Count</a><code> [get]</code></td></tr>
-<tr class="memdesc:ad0c83e5b2882e1d2b5ccb3e616c30d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the collection.  <br /></td></tr>
+<tr class="memdesc:ad0c83e5b2882e1d2b5ccb3e616c30d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of script include elements processed by this extension.  <br /></td></tr>
 <tr class="separator:ad0c83e5b2882e1d2b5ccb3e616c30d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f8383f93b55a0668fc60818b2e5848c" id="r_a4f8383f93b55a0668fc60818b2e5848c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f8383f93b55a0668fc60818b2e5848c">IsToBeProccessed</a><code> [get]</code></td></tr>
-<tr class="memdesc:a4f8383f93b55a0668fc60818b2e5848c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the item is marked to be processed.  <br /></td></tr>
+<tr class="memdesc:a4f8383f93b55a0668fc60818b2e5848c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the block should be processed immediately.  <br /></td></tr>
 <tr class="separator:a4f8383f93b55a0668fc60818b2e5848c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00008">8</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<div class="textblock"><p>Markup extension that allows including external JavaScript files using a special comment syntax. </p>
+<p>Supported syntax: </p><div class="fragment"></div><!-- fragment --> <p>The path is resolved to an absolute path. If the file exists, a <code>script</code> element is generated with a <code>src</code> attribute. Otherwise, an HTML comment indicating an error is returned. </p>
+<p>This extension has priority and is processed before other extensions. </p>
+
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00024">24</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0007c0cf8b5590d06eed8509b891cac2" name="a0007c0cf8b5590d06eed8509b891cac2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0007c0cf8b5590d06eed8509b891cac2">&#9670;&#160;</a></span>CanParse()</h2>
@@ -162,18 +169,18 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the specified line can be parsed by the current parser. </p>
+<p>Determines whether the specified line contains a script include directive. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to evaluate for parse compatibility. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The input line.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the line can be parsed; otherwise, false.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the line matches <code>&lt;!&ndash; include script: ... &ndash;&gt;</code>; otherwise, <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a08dea833e009d5cca04a74b2bce4e083">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00026">26</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00057">57</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -192,18 +199,18 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Parses the specified line of text and returns a corresponding inline markup element if recognized. </p>
+<p>Parses a single line containing a script include directive. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to parse for inline markup. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The input line.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> representing the parsed inline markup element, or <code>null</code> if the line does not contain a recognized markup element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> with <code>script</code> tag and <code>src</code> attribute pointing to the file, or an HTML comment indicating an error if the file cannot be found. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a3855ce902b552b9649afe7b99606b370">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00031">31</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00069">69</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -222,9 +229,18 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Parses a block containing a script include directive from the provided queue of lines. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lines</td><td>A queue containing the remaining lines of the document.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A collection containing a single <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> for the script include, or <code>null</code> if no match is found. </dd></dl>
+
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html#abbb922714495dc42df0d46682f60b3b8">SlimeMarkUp.Core.IBlockMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00083">83</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00128">128</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -243,12 +259,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the current operation or item has priority status. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operation or item is considered a priority; otherwise, false.</dd></dl>
+<p>Indicates whether this extension has priority over others. </p>
+<dl class="section return"><dt>Returns</dt><dd>Always returns <code>true</code>. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a890d2cdc164ad751edcc418f9a5fdd36">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00019">19</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00043">43</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -273,11 +289,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of elements contained in the collection. </p>
+<p>Gets the number of script include elements processed by this extension. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#afbc81e270aeae041652a5e7662d84b57">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00095">95</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00142">142</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -301,11 +317,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value indicating whether the item is marked to be processed. </p>
+<p>Gets a value indicating whether the block should be processed immediately. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a6bf2df09c788ce61fd1edfa3db6f5479">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00100">100</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00149">149</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -329,11 +345,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the zero-based position of the item within its containing collection or sequence. </p>
+<p>Gets the execution order of the extension. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#aca804889976a704ede455ba06d272c9f">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00012">12</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_include_script_extension_8cs_source.html#l00030">30</a> of file <a class="el" href="_include_script_extension_8cs_source.html">IncludeScriptExtension.cs</a>.</p>
 
 </div>
 </div>

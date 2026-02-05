@@ -1,8 +1,9 @@
-.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.CodeBlockExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.CodeBlockExtension" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-SlimeMarkUp.Core.Extensions.SlimeMarkup.CodeBlockExtension
+SlimeMarkUp.Core.Extensions.SlimeMarkup.CodeBlockExtension \- Markup extension that parses fenced code blocks using triple backticks\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,18 +15,19 @@ Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .ti -1c
 .RI "bool \fBCanParse\fP (string line)"
 .br
-.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.RI "Determines whether the specified line can be parsed as the start of a fenced code block\&. "
 .ti -1c
 .RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
 .br
-.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.RI "Parses a single line\&. "
 .ti -1c
 .RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
 .br
+.RI "Parses a fenced code block from the provided queue of lines\&. "
 .ti -1c
 .RI "bool \fBPriority\fP ()"
 .br
-.RI "Determines whether the current operation or item has priority status\&. "
+.RI "Indicates whether this extension has priority over others\&. "
 .in -1c
 
 Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
@@ -37,36 +39,52 @@ Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\
 .ti -1c
 .RI "int \fBCount\fP\fR [get]\fP"
 .br
-.RI "Gets the number of elements contained in the collection\&. "
+.RI "Gets the number of parsed code block elements\&. "
 .ti -1c
 .RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
 .br
-.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.RI "Gets a value indicating whether the block should be processed immediately\&. "
 .ti -1c
 .RI "int \fBOrder\fP\fR [get]\fP"
 .br
-.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.RI "Gets the execution order of the extension\&. "
 .in -1c
 
 Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
 .SH "Detailed Description"
 .PP 
-Definition at line \fB4\fP of file \fBCodeBlockExtension\&.cs\fP\&.
+Markup extension that parses fenced code blocks using triple backticks\&. 
+
+Supported syntax: 
+.PP
+.nf
+@icode 
+Console\&.WriteLine("Hello, world!");
+@endicode 
+
+.fi
+.PP
+ 
+
+.PP
+All content between the opening and closing fences is preserved verbatim and is not processed by other markup extensions\&. 
+.PP
+Definition at line \fB18\fP of file \fBCodeBlockExtension\&.cs\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.CanParse (string line)"
 
 .PP
-Determines whether the specified line can be parsed by the current parser\&. 
+Determines whether the specified line can be parsed as the start of a fenced code block\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to evaluate for parse compatibility\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the line can be parsed; otherwise, false\&.
+\fRtrue\fP if the line equals \fR```\fP; otherwise, \fRfalse\fP\&. 
 .RE
 .PP
 
@@ -75,16 +93,16 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.Parse (string line)"
 
 .PP
-Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+Parses a single line\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+Always returns \fRnull\fP, since code blocks are parsed as multi-line blocks\&. 
 .RE
 .PP
 
@@ -93,50 +111,64 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.ParseBlock (Queue< string > lines)"
 
 .PP
-Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+Parses a fenced code block from the provided queue of lines\&. 
 .PP
-Definition at line \fB12\fP of file \fBCodeBlockExtension\&.cs\fP\&.
-.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.Priority ()"
-
-.PP
-Determines whether the current operation or item has priority status\&. 
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue containing the remaining lines of the document\&. 
+.RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the operation or item is considered a priority; otherwise, false\&.
+A collection containing a single \fBMarkupElement\fP with the \fRpre\fP tag and the raw code as content\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+.PP
+Definition at line \fB57\fP of file \fBCodeBlockExtension\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.Priority ()"
+
+.PP
+Indicates whether this extension has priority over others\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Always returns \fRfalse\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB25\fP of file \fBCodeBlockExtension\&.cs\fP\&.
+Definition at line \fB75\fP of file \fBCodeBlockExtension\&.cs\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.Count\fR [get]\fP"
 
 .PP
-Gets the number of elements contained in the collection\&. 
+Gets the number of parsed code block elements\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB6\fP of file \fBCodeBlockExtension\&.cs\fP\&.
+Definition at line \fB23\fP of file \fBCodeBlockExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.IsToBeProccessed\fR [get]\fP"
 
 .PP
-Gets a value indicating whether the item is marked to be processed\&. 
+Gets a value indicating whether the block should be processed immediately\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB8\fP of file \fBCodeBlockExtension\&.cs\fP\&.
+Definition at line \fB37\fP of file \fBCodeBlockExtension\&.cs\fP\&.
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.CodeBlockExtension\&.Order\fR [get]\fP"
 
 .PP
-Gets the zero-based position of the item within its containing collection or sequence\&. 
+Gets the execution order of the extension\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB29\fP of file \fBCodeBlockExtension\&.cs\fP\&.
+Definition at line \fB82\fP of file \fBCodeBlockExtension\&.cs\fP\&.
 
 .SH "Author"
 .PP 

@@ -1,8 +1,9 @@
-.TH "SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianTableExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianTableExtension" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianTableExtension
+SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianTableExtension \- Markup extension that parses Obsidian-style Markdown tables\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,18 +15,19 @@ Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .ti -1c
 .RI "bool \fBPriority\fP ()"
 .br
-.RI "Determines whether the current operation or item has priority status\&. "
+.RI "Indicates whether this extension has priority over others\&. "
 .ti -1c
 .RI "bool \fBCanParse\fP (string line)"
 .br
-.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.RI "Determines whether the specified line can be parsed as the start of a table\&. "
 .ti -1c
 .RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
 .br
-.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.RI "Parses a single line\&. "
 .ti -1c
 .RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
 .br
+.RI "Parses a table block from the provided queue of lines\&. "
 .in -1c
 
 Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
@@ -37,36 +39,53 @@ Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\
 .ti -1c
 .RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
 .br
-.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.RI "Gets a value indicating whether the block should be processed immediately\&. "
 .ti -1c
 .RI "int \fBOrder\fP\fR [get]\fP"
 .br
-.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.RI "Gets the execution order of the extension\&. "
 .ti -1c
 .RI "int \fBCount\fP\fR [get]\fP"
 .br
-.RI "Gets the number of elements contained in the collection\&. "
+.RI "Gets the number of parsed table elements\&. "
 .in -1c
 
 Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
 .SH "Detailed Description"
 .PP 
-Definition at line \fB6\fP of file \fBObsidianTableExtension\&.cs\fP\&.
+Markup extension that parses Obsidian-style Markdown tables\&. 
+
+Supported syntax: 
+.PP
+.nf
+<table class="markdownTable">
+  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Name  </th>    <th class="markdownTableHeadNone"> Age  </th>    <th class="markdownTableHeadNone"> City  </th>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> John  </td>    <td class="markdownTableBodyNone"> 30  </td>    <td class="markdownTableBodyNone"> Rome  </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> Anna  </td>    <td class="markdownTableBodyNone"> 25  </td>    <td class="markdownTableBodyNone"> Paris  </td>  </tr></table>
+
+.fi
+.PP
+ 
+
+.PP
+Lines starting with \fR|\fP are treated as table rows\&. Separator rows containing only \fR-\fP or \fR=\fP characters are ignored\&. 
+.PP
+Definition at line \fB23\fP of file \fBObsidianTableExtension\&.cs\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.CanParse (string line)"
 
 .PP
-Determines whether the specified line can be parsed by the current parser\&. 
+Determines whether the specified line can be parsed as the start of a table\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to evaluate for parse compatibility\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the line can be parsed; otherwise, false\&.
+\fRtrue\fP if the line starts with \fR|\fP; otherwise, \fRfalse\fP\&. 
 .RE
 .PP
 
@@ -75,16 +94,16 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.Parse (string line)"
 
 .PP
-Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+Parses a single line\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+Always returns \fRnull\fP, since tables are parsed as block elements\&. 
 .RE
 .PP
 
@@ -93,50 +112,64 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.ParseBlock (Queue< string > lines)"
 
 .PP
-Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+Parses a table block from the provided queue of lines\&. 
 .PP
-Definition at line \fB28\fP of file \fBObsidianTableExtension\&.cs\fP\&.
-.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.Priority ()"
-
-.PP
-Determines whether the current operation or item has priority status\&. 
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue containing the remaining lines of the document\&. 
+.RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the operation or item is considered a priority; otherwise, false\&.
+A collection containing a single \fBMarkupElement\fP with the \fRtable\fP tag and its rows as content\&. 
+.RE
+.PP
+
+.PP
+Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
+.PP
+Definition at line \fB82\fP of file \fBObsidianTableExtension\&.cs\fP\&.
+.SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.Priority ()"
+
+.PP
+Indicates whether this extension has priority over others\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Always returns \fRfalse\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB20\fP of file \fBObsidianTableExtension\&.cs\fP\&.
+Definition at line \fB51\fP of file \fBObsidianTableExtension\&.cs\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.Count\fR [get]\fP"
 
 .PP
-Gets the number of elements contained in the collection\&. 
+Gets the number of parsed table elements\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB18\fP of file \fBObsidianTableExtension\&.cs\fP\&.
+Definition at line \fB44\fP of file \fBObsidianTableExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.IsToBeProccessed\fR [get]\fP"
 
 .PP
-Gets a value indicating whether the item is marked to be processed\&. 
+Gets a value indicating whether the block should be processed immediately\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB8\fP of file \fBObsidianTableExtension\&.cs\fP\&.
+Definition at line \fB29\fP of file \fBObsidianTableExtension\&.cs\fP\&.
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.ObsidianMarkup\&.ObsidianTableExtension\&.Order\fR [get]\fP"
 
 .PP
-Gets the zero-based position of the item within its containing collection or sequence\&. 
+Gets the execution order of the extension\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB10\fP of file \fBObsidianTableExtension\&.cs\fP\&.
+Definition at line \fB34\fP of file \fBObsidianTableExtension\&.cs\fP\&.
 
 .SH "Author"
 .PP 

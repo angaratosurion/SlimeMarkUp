@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.6.5</span>
+   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.7.0</span>
    </div>
   </td>
  </tr>
@@ -103,6 +103,9 @@ $(function(){initNavTree('class_slime_mark_up_1_1_core_1_1_extensions_1_1_obsidi
   <div class="headertitle"><div class="title">SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianBlockquoteExtension Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Markup extension that parses Obsidian-style blockquotes.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianBlockquoteExtension:</div>
 <div class="dyncontent">
@@ -117,15 +120,16 @@ Inheritance diagram for SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianBlock
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3967d5d1c11c6479bf9bc840ce0f17ca" id="r_a3967d5d1c11c6479bf9bc840ce0f17ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3967d5d1c11c6479bf9bc840ce0f17ca">CanParse</a> (string line)</td></tr>
-<tr class="memdesc:a3967d5d1c11c6479bf9bc840ce0f17ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified line can be parsed by the current parser.  <br /></td></tr>
+<tr class="memdesc:a3967d5d1c11c6479bf9bc840ce0f17ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified line can be parsed as the start of a blockquote.  <br /></td></tr>
 <tr class="separator:a3967d5d1c11c6479bf9bc840ce0f17ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c8aab41a0cae5121e3a59949ee20484" id="r_a4c8aab41a0cae5121e3a59949ee20484"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c8aab41a0cae5121e3a59949ee20484">Parse</a> (string line)</td></tr>
-<tr class="memdesc:a4c8aab41a0cae5121e3a59949ee20484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the specified line of text and returns a corresponding inline markup element if recognized.  <br /></td></tr>
+<tr class="memdesc:a4c8aab41a0cae5121e3a59949ee20484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a single line.  <br /></td></tr>
 <tr class="separator:a4c8aab41a0cae5121e3a59949ee20484"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef9c60f3ab452f3aa823be805751e1a8" id="r_aef9c60f3ab452f3aa823be805751e1a8"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef9c60f3ab452f3aa823be805751e1a8">ParseBlock</a> (Queue&lt; string &gt; lines)</td></tr>
+<tr class="memdesc:aef9c60f3ab452f3aa823be805751e1a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a blockquote block from the provided queue of lines.  <br /></td></tr>
 <tr class="separator:aef9c60f3ab452f3aa823be805751e1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08f52149274722887deb710b8e1d975a" id="r_a08f52149274722887deb710b8e1d975a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08f52149274722887deb710b8e1d975a">Priority</a> ()</td></tr>
-<tr class="memdesc:a08f52149274722887deb710b8e1d975a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current operation or item has priority status.  <br /></td></tr>
+<tr class="memdesc:a08f52149274722887deb710b8e1d975a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this extension has priority over others.  <br /></td></tr>
 <tr class="separator:a08f52149274722887deb710b8e1d975a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html">SlimeMarkUp.Core.IBlockMarkupExtension</a></td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
@@ -133,19 +137,21 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a55325edb9303c5e3c0e364296dafe2ec" id="r_a55325edb9303c5e3c0e364296dafe2ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55325edb9303c5e3c0e364296dafe2ec">Count</a><code> [get]</code></td></tr>
-<tr class="memdesc:a55325edb9303c5e3c0e364296dafe2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the collection.  <br /></td></tr>
+<tr class="memdesc:a55325edb9303c5e3c0e364296dafe2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of parsed blockquote elements.  <br /></td></tr>
 <tr class="separator:a55325edb9303c5e3c0e364296dafe2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc564085995e4b20171fbc4fe10eabfc" id="r_adc564085995e4b20171fbc4fe10eabfc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc564085995e4b20171fbc4fe10eabfc">IsToBeProccessed</a><code> [get]</code></td></tr>
-<tr class="memdesc:adc564085995e4b20171fbc4fe10eabfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the item is marked to be processed.  <br /></td></tr>
+<tr class="memdesc:adc564085995e4b20171fbc4fe10eabfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the block should be processed immediately.  <br /></td></tr>
 <tr class="separator:adc564085995e4b20171fbc4fe10eabfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3811d2d6f872ee9ca108f4e14924539c" id="r_a3811d2d6f872ee9ca108f4e14924539c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3811d2d6f872ee9ca108f4e14924539c">Order</a><code> [get]</code></td></tr>
-<tr class="memdesc:a3811d2d6f872ee9ca108f4e14924539c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the zero-based position of the item within its containing collection or sequence.  <br /></td></tr>
+<tr class="memdesc:a3811d2d6f872ee9ca108f4e14924539c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the execution order of the extension.  <br /></td></tr>
 <tr class="separator:a3811d2d6f872ee9ca108f4e14924539c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00005">5</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
+<div class="textblock"><p>Markup extension that parses Obsidian-style blockquotes. </p>
+<p>A blockquote is defined as one or more consecutive lines starting with the <code>&gt; </code> prefix. </p>
+
+<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00012">12</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3967d5d1c11c6479bf9bc840ce0f17ca" name="a3967d5d1c11c6479bf9bc840ce0f17ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3967d5d1c11c6479bf9bc840ce0f17ca">&#9670;&#160;</a></span>CanParse()</h2>
@@ -162,14 +168,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the specified line can be parsed by the current parser. </p>
+<p>Determines whether the specified line can be parsed as the start of a blockquote. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to evaluate for parse compatibility. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The input line.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the line can be parsed; otherwise, false.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the line starts with <code>&gt; </code>; otherwise, <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a08dea833e009d5cca04a74b2bce4e083">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
@@ -190,14 +196,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Parses the specified line of text and returns a corresponding inline markup element if recognized. </p>
+<p>Parses a single line. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to parse for inline markup. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The input line.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> representing the parsed inline markup element, or <code>null</code> if the line does not contain a recognized markup element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Always returns <code>null</code>, since blockquotes are parsed as blocks. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a3855ce902b552b9649afe7b99606b370">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
@@ -218,9 +224,18 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Parses a blockquote block from the provided queue of lines. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lines</td><td>A queue containing the remaining lines of the document. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A collection containing a single <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> with the <code>blockquote</code> tag. </dd></dl>
+
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html#abbb922714495dc42df0d46682f60b3b8">SlimeMarkUp.Core.IBlockMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00021">21</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00061">61</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -239,12 +254,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the current operation or item has priority status. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operation or item is considered a priority; otherwise, false.</dd></dl>
+<p>Indicates whether this extension has priority over others. </p>
+<dl class="section return"><dt>Returns</dt><dd>Always returns <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a890d2cdc164ad751edcc418f9a5fdd36">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00043">43</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00088">88</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -269,11 +284,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of elements contained in the collection. </p>
+<p>Gets the number of parsed blockquote elements. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#afbc81e270aeae041652a5e7662d84b57">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00007">7</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00017">17</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -297,11 +312,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value indicating whether the item is marked to be processed. </p>
+<p>Gets a value indicating whether the block should be processed immediately. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a6bf2df09c788ce61fd1edfa3db6f5479">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00009">9</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00031">31</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -325,11 +340,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the zero-based position of the item within its containing collection or sequence. </p>
+<p>Gets the execution order of the extension. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#aca804889976a704ede455ba06d272c9f">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00011">11</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_obsidian_blockquote_extension_8cs_source.html#l00036">36</a> of file <a class="el" href="_obsidian_blockquote_extension_8cs_source.html">ObsidianBlockquoteExtension.cs</a>.</p>
 
 </div>
 </div>

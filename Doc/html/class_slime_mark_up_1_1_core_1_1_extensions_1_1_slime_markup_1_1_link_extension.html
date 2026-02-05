@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.6.5</span>
+   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.7.0</span>
    </div>
   </td>
  </tr>
@@ -103,6 +103,9 @@ $(function(){initNavTree('class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_
   <div class="headertitle"><div class="title">SlimeMarkUp.Core.Extensions.SlimeMarkup.LinkExtension Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A markup extension that parses Markdown-style links and converts them to HTML anchor (&lt;a&gt;) tags. Supports optional inline attributes in the format {key=value key2=value2}.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SlimeMarkUp.Core.Extensions.SlimeMarkup.LinkExtension:</div>
 <div class="dyncontent">
@@ -117,15 +120,16 @@ Inheritance diagram for SlimeMarkUp.Core.Extensions.SlimeMarkup.LinkExtension:</
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adee9685726cde0826f7d2ed2bb244b5f" id="r_adee9685726cde0826f7d2ed2bb244b5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adee9685726cde0826f7d2ed2bb244b5f">Priority</a> ()</td></tr>
-<tr class="memdesc:adee9685726cde0826f7d2ed2bb244b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current operation or item has priority status.  <br /></td></tr>
+<tr class="memdesc:adee9685726cde0826f7d2ed2bb244b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this extension has priority over others. Always returns <code>false</code>.  <br /></td></tr>
 <tr class="separator:adee9685726cde0826f7d2ed2bb244b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7370f12aa12888da662c53297389ba27" id="r_a7370f12aa12888da662c53297389ba27"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7370f12aa12888da662c53297389ba27">CanParse</a> (string line)</td></tr>
-<tr class="memdesc:a7370f12aa12888da662c53297389ba27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified line can be parsed by the current parser.  <br /></td></tr>
+<tr class="memdesc:a7370f12aa12888da662c53297389ba27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a line of text can be parsed as a link by this extension. Lines matching the Markdown link pattern [text](url) are parseable, unless they start with a backslash (), which escapes the syntax.  <br /></td></tr>
 <tr class="separator:a7370f12aa12888da662c53297389ba27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a897b2f66fc8e37f20ac98d89976a2e" id="r_a8a897b2f66fc8e37f20ac98d89976a2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a897b2f66fc8e37f20ac98d89976a2e">Parse</a> (string line)</td></tr>
-<tr class="memdesc:a8a897b2f66fc8e37f20ac98d89976a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the specified line of text and returns a corresponding inline markup element if recognized.  <br /></td></tr>
+<tr class="memdesc:a8a897b2f66fc8e37f20ac98d89976a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a single line as a link. Currently not implemented; always returns <code>null</code>.  <br /></td></tr>
 <tr class="separator:a8a897b2f66fc8e37f20ac98d89976a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac793fb2a506ee43b28eaa1a1f000dfb7" id="r_ac793fb2a506ee43b28eaa1a1f000dfb7"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html">MarkupElement</a> &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac793fb2a506ee43b28eaa1a1f000dfb7">ParseBlock</a> (Queue&lt; string &gt; lines)</td></tr>
+<tr class="memdesc:ac793fb2a506ee43b28eaa1a1f000dfb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a block of lines from a queue, extracting Markdown-style links and converting them to HTML &lt;a&gt; tags. Optional inline attributes in the format {key=value key2=value2} are appended to the anchor tag.  <br /></td></tr>
 <tr class="separator:ac793fb2a506ee43b28eaa1a1f000dfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html">SlimeMarkUp.Core.IBlockMarkupExtension</a></td></tr>
 <tr class="inherit_header pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
@@ -133,19 +137,20 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a897f6eb1b641145a4728b158e8c9b0f1" id="r_a897f6eb1b641145a4728b158e8c9b0f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a897f6eb1b641145a4728b158e8c9b0f1">Count</a><code> [get]</code></td></tr>
-<tr class="memdesc:a897f6eb1b641145a4728b158e8c9b0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the collection.  <br /></td></tr>
+<tr class="memdesc:a897f6eb1b641145a4728b158e8c9b0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of links processed. Currently always returns 0 because counting is not implemented.  <br /></td></tr>
 <tr class="separator:a897f6eb1b641145a4728b158e8c9b0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd4756fd0034ef4a26b3c0cc6bef0e92" id="r_abd4756fd0034ef4a26b3c0cc6bef0e92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd4756fd0034ef4a26b3c0cc6bef0e92">IsToBeProccessed</a><code> [get]</code></td></tr>
-<tr class="memdesc:abd4756fd0034ef4a26b3c0cc6bef0e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the item is marked to be processed.  <br /></td></tr>
+<tr class="memdesc:abd4756fd0034ef4a26b3c0cc6bef0e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this extension should be processed. Always returns <code>false</code>.  <br /></td></tr>
 <tr class="separator:abd4756fd0034ef4a26b3c0cc6bef0e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab2e32f2a7f37883a17b37a9c94003a0" id="r_aab2e32f2a7f37883a17b37a9c94003a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab2e32f2a7f37883a17b37a9c94003a0">Order</a><code> [get]</code></td></tr>
-<tr class="memdesc:aab2e32f2a7f37883a17b37a9c94003a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the zero-based position of the item within its containing collection or sequence.  <br /></td></tr>
+<tr class="memdesc:aab2e32f2a7f37883a17b37a9c94003a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the order in which this extension should be applied relative to others. Lower numbers are processed earlier. This extension has an order of 2.  <br /></td></tr>
 <tr class="separator:aab2e32f2a7f37883a17b37a9c94003a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_slime_mark_up_1_1_core_1_1_i_markup_extension')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html">SlimeMarkUp.Core.IMarkupExtension</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00006">6</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
+<div class="textblock"><p>A markup extension that parses Markdown-style links and converts them to HTML anchor (&lt;a&gt;) tags. Supports optional inline attributes in the format {key=value key2=value2}. </p>
+
+<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00010">10</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7370f12aa12888da662c53297389ba27" name="a7370f12aa12888da662c53297389ba27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7370f12aa12888da662c53297389ba27">&#9670;&#160;</a></span>CanParse()</h2>
@@ -162,14 +167,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the specified line can be parsed by the current parser. </p>
+<p>Determines if a line of text can be parsed as a link by this extension. Lines matching the Markdown link pattern [text](url) are parseable, unless they start with a backslash (), which escapes the syntax. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to evaluate for parse compatibility. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The line of text to check.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the line can be parsed; otherwise, false.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the line contains a Markdown-style link; otherwise, <code>false</code>.</dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a08dea833e009d5cca04a74b2bce4e083">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
@@ -190,14 +195,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Parses the specified line of text and returns a corresponding inline markup element if recognized. </p>
+<p>Parses a single line as a link. Currently not implemented; always returns <code>null</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">line</td><td>The line of text to parse for inline markup. Cannot be null.</td></tr>
+    <tr><td class="paramname">line</td><td>The line of text to parse.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> representing the parsed inline markup element, or <code>null</code> if the line does not contain a recognized markup element.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>null</code></dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a3855ce902b552b9649afe7b99606b370">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
@@ -218,9 +223,18 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Parses a block of lines from a queue, extracting Markdown-style links and converting them to HTML &lt;a&gt; tags. Optional inline attributes in the format {key=value key2=value2} are appended to the anchor tag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lines</td><td>A queue of lines to parse.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An enumerable containing a single <a class="el" href="class_slime_mark_up_1_1_core_1_1_markup_element.html" title="Represents an element in a markup structure, including its tag name, content, attributes,...">MarkupElement</a> with the generated HTML anchor tag.</dd></dl>
+
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html#abbb922714495dc42df0d46682f60b3b8">SlimeMarkUp.Core.IBlockMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00027">27</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00067">67</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -239,12 +253,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines whether the current operation or item has priority status. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operation or item is considered a priority; otherwise, false.</dd></dl>
+<p>Determines whether this extension has priority over others. Always returns <code>false</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>false</code></dd></dl>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a890d2cdc164ad751edcc418f9a5fdd36">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00018">18</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00039">39</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -269,11 +283,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of elements contained in the collection. </p>
+<p>Gets the number of links processed. Currently always returns 0 because counting is not implemented. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#afbc81e270aeae041652a5e7662d84b57">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00008">8</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00016">16</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -297,11 +311,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value indicating whether the item is marked to be processed. </p>
+<p>Indicates whether this extension should be processed. Always returns <code>false</code>. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#a6bf2df09c788ce61fd1edfa3db6f5479">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00009">9</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00021">21</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
 
 </div>
 </div>
@@ -325,11 +339,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the zero-based position of the item within its containing collection or sequence. </p>
+<p>Gets the order in which this extension should be applied relative to others. Lower numbers are processed earlier. This extension has an order of 2. </p>
 
 <p>Implements <a class="el" href="interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html#aca804889976a704ede455ba06d272c9f">SlimeMarkUp.Core.IMarkupExtension</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00011">11</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_link_extension_8cs_source.html#l00027">27</a> of file <a class="el" href="_link_extension_8cs_source.html">LinkExtension.cs</a>.</p>
 
 </div>
 </div>

@@ -1,8 +1,9 @@
-.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.HeaderExtension" 3 "Version 0.1.6.5" "SlimeMarkUp" \" -*- nroff -*-
+.TH "SlimeMarkUp.Core.Extensions.SlimeMarkup.HeaderExtension" 3 "Version 0.1.7.0" "SlimeMarkUp" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-SlimeMarkUp.Core.Extensions.SlimeMarkup.HeaderExtension
+SlimeMarkUp.Core.Extensions.SlimeMarkup.HeaderExtension \- Markup extension that parses Markdown headers using hash (#) symbols\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,18 +15,19 @@ Inherits \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .ti -1c
 .RI "bool \fBCanParse\fP (string line)"
 .br
-.RI "Determines whether the specified line can be parsed by the current parser\&. "
+.RI "Determines whether the specified line can be parsed as a header\&. "
 .ti -1c
 .RI "\fBMarkupElement\fP? \fBParse\fP (string line)"
 .br
-.RI "Parses the specified line of text and returns a corresponding inline markup element if recognized\&. "
+.RI "Parses a single header line and returns a corresponding \fBMarkupElement\fP\&. "
 .ti -1c
 .RI "IEnumerable< \fBMarkupElement\fP >? \fBParseBlock\fP (Queue< string > lines)"
 .br
+.RI "Parses a header block from the provided queue of lines\&. "
 .ti -1c
 .RI "bool \fBPriority\fP ()"
 .br
-.RI "Determines whether the current operation or item has priority status\&. "
+.RI "Indicates whether this extension has priority over others\&. "
 .in -1c
 
 Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP
@@ -37,36 +39,52 @@ Public Member Functions inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\
 .ti -1c
 .RI "int \fBCount\fP\fR [get]\fP"
 .br
-.RI "Gets the number of elements contained in the collection\&. "
+.RI "Gets the number of parsed header elements\&. "
 .ti -1c
 .RI "bool \fBIsToBeProccessed\fP\fR [get]\fP"
 .br
-.RI "Gets a value indicating whether the item is marked to be processed\&. "
+.RI "Gets a value indicating whether the block should be processed immediately\&. "
 .ti -1c
 .RI "int \fBOrder\fP\fR [get]\fP"
 .br
-.RI "Gets the zero-based position of the item within its containing collection or sequence\&. "
+.RI "Gets the execution order of the extension\&. "
 .in -1c
 
 Properties inherited from \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP
 .SH "Detailed Description"
 .PP 
-Definition at line \fB5\fP of file \fBHeaderExtension\&.cs\fP\&.
+Markup extension that parses Markdown headers using hash (#) symbols\&. 
+
+Supported syntax: 
+.PP
+.nf
+@section autotoc_md0 Header 1
+@subsection autotoc_md1 Header 2
+@subsubsection autotoc_md2 Header 3
+
+.fi
+.PP
+ 
+
+.PP
+The number of leading \fR#\fP characters determines the header level\&. Any leading or trailing whitespace is trimmed from the header content\&. 
+.PP
+Definition at line \fB20\fP of file \fBHeaderExtension\&.cs\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\&.CanParse (string line)"
 
 .PP
-Determines whether the specified line can be parsed by the current parser\&. 
+Determines whether the specified line can be parsed as a header\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to evaluate for parse compatibility\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-true if the line can be parsed; otherwise, false\&.
+\fRtrue\fP if the line starts with one or more \fR#\fP; otherwise, \fRfalse\fP\&. 
 .RE
 .PP
 
@@ -75,70 +93,84 @@ Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .SS "\fBMarkupElement\fP? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\&.Parse (string line)"
 
 .PP
-Parses the specified line of text and returns a corresponding inline markup element if recognized\&. 
+Parses a single header line and returns a corresponding \fBMarkupElement\fP\&. 
 .PP
 \fBParameters\fP
 .RS 4
-\fIline\fP The line of text to parse for inline markup\&. Cannot be null\&.
+\fIline\fP The input line\&.
 .RE
 .PP
 \fBReturns\fP
 .RS 4
-A \fBMarkupElement\fP representing the parsed inline markup element, or \fRnull\fP if the line does not contain a recognized markup element\&.
+A \fBMarkupElement\fP with \fRh1\fP\&.\&. \fRh6\fP tag and the header content\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB11\fP of file \fBHeaderExtension\&.cs\fP\&.
+Definition at line \fB47\fP of file \fBHeaderExtension\&.cs\fP\&.
 .SS "IEnumerable< \fBMarkupElement\fP >? SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\&.ParseBlock (Queue< string > lines)"
+
+.PP
+Parses a header block from the provided queue of lines\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlines\fP A queue containing the remaining lines of the document\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A collection containing a single \fBMarkupElement\fP representing the header\&. 
+.RE
+.PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IBlockMarkupExtension\fP\&.
 .PP
-Definition at line \fB25\fP of file \fBHeaderExtension\&.cs\fP\&.
+Definition at line \fB69\fP of file \fBHeaderExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\&.Priority ()"
 
 .PP
-Determines whether the current operation or item has priority status\&. 
+Indicates whether this extension has priority over others\&. 
 .PP
 \fBReturns\fP
 .RS 4
-true if the operation or item is considered a priority; otherwise, false\&.
+Always returns \fRfalse\fP\&. 
 .RE
 .PP
 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB32\fP of file \fBHeaderExtension\&.cs\fP\&.
+Definition at line \fB81\fP of file \fBHeaderExtension\&.cs\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\&.Count\fR [get]\fP"
 
 .PP
-Gets the number of elements contained in the collection\&. 
+Gets the number of parsed header elements\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB7\fP of file \fBHeaderExtension\&.cs\fP\&.
+Definition at line \fB25\fP of file \fBHeaderExtension\&.cs\fP\&.
 .SS "bool SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\&.IsToBeProccessed\fR [get]\fP"
 
 .PP
-Gets a value indicating whether the item is marked to be processed\&. 
+Gets a value indicating whether the block should be processed immediately\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB9\fP of file \fBHeaderExtension\&.cs\fP\&.
+Definition at line \fB38\fP of file \fBHeaderExtension\&.cs\fP\&.
 .SS "int SlimeMarkUp\&.Core\&.Extensions\&.SlimeMarkup\&.HeaderExtension\&.Order\fR [get]\fP"
 
 .PP
-Gets the zero-based position of the item within its containing collection or sequence\&. 
+Gets the execution order of the extension\&. 
 .PP
 Implements \fBSlimeMarkUp\&.Core\&.IMarkupExtension\fP\&.
 .PP
-Definition at line \fB36\fP of file \fBHeaderExtension\&.cs\fP\&.
+Definition at line \fB88\fP of file \fBHeaderExtension\&.cs\fP\&.
 
 .SH "Author"
 .PP 
