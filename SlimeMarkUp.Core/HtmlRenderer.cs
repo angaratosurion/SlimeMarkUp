@@ -14,6 +14,13 @@ namespace SlimeMarkUp.Core
     /// for concurrent rendering operations.</remarks>
     public class HtmlRenderer
     {
+        /// <summary>
+        /// Renders a collection of <see cref="MarkupElement"/> objects into an HTML string.
+        /// Handles specific tags like images, tables, links, iframes, raw HTML, and headers, 
+        /// while wrapping other elements with their corresponding HTML tags.
+        /// </summary>
+        /// <param name="elements">The collection of <see cref="MarkupElement"/> objects to render.</param>
+        /// <returns>A string containing the rendered HTML of all elements.</returns>
         public string Render(IEnumerable<MarkupElement> elements)
         {
             var sb = new StringBuilder();
