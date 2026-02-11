@@ -69,7 +69,9 @@ Blockquote
 Λοιπά
 --- Παράγει: <hr/>
 \ : Escape χαρακτήρας (εμφανίζει τον επόμενο χαρακτήρα ως απλό κείμενο)
+<!-- include style: filename.css -->
 Παράγει: <link rel="stylesheet" href="filename.css"/>
+<!--include:filename.md -->
 Εισάγει τα περιεχόμενα του αρχείου filename
 
 ---
@@ -139,9 +141,11 @@ Blockquote
 Others
 --- Produces: <hr/>
 \ : Escape character (displays the next special character as plain text)
+<!-- include style: filename.css -->
 Produces: <link rel="stylesheet" href="filename.css"/>
+<!--include:filename.md -->
 Inserts the contents of the file named filename
 
 ---
 
-Ελπίζω αυτή η μορφή να σε εξυπηρετεί καλύτερα. Χρειάζεσαι κάτι άλλο;
+ 

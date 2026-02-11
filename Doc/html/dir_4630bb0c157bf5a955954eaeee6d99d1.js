@@ -6,7 +6,6 @@ var dir_4630bb0c157bf5a955954eaeee6d99d1 =
     [ "DocumentPropertiesLoader.cs", "_document_properties_loader_8cs.html", null ],
     [ "HtmlRenderer.cs", "_html_renderer_8cs.html", "_html_renderer_8cs" ],
     [ "IBlockMarkupExtension.cs", "_i_block_markup_extension_8cs.html", "_i_block_markup_extension_8cs" ],
-    [ "IMarkupExtension.cs", "_i_markup_extension_8cs.html", "_i_markup_extension_8cs" ],
     [ "IncludeTagHandler.cs", "_include_tag_handler_8cs.html", "_include_tag_handler_8cs" ],
     [ "MarkupElement.cs", "_markup_element_8cs.html", "_markup_element_8cs" ],
     [ "MarkupParser.cs", "_markup_parser_8cs.html", "_markup_parser_8cs" ]

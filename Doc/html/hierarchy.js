@@ -2,7 +2,6 @@ var hierarchy =
 [
     [ "SlimeMarkUp.Core.Models.DocumentProperties", "class_slime_mark_up_1_1_core_1_1_models_1_1_document_properties.html", null ],
     [ "SlimeMarkUp.Core.HtmlRenderer", "class_slime_mark_up_1_1_core_1_1_html_renderer.html", null ],
-    [ "SlimeExtensiveMarkDown.Core.IMarkupExtension", "interface_slime_extensive_mark_down_1_1_core_1_1_i_markup_extension.html", null ],
     [ "SlimeMarkUp.Core.IMarkupExtension", "interface_slime_mark_up_1_1_core_1_1_i_markup_extension.html", [
       [ "SlimeMarkUp.Core.IBlockMarkupExtension", "interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html", [
         [ "SlimeMarkUp.Core.Extensions.ObsidianMarkup.ObsidianBlockquoteExtension", "class_slime_mark_up_1_1_core_1_1_extensions_1_1_obsidian_markup_1_1_obsidian_blockquote_extension.html", null ],

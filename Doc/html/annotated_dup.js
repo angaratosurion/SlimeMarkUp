@@ -1,10 +1,5 @@
 var annotated_dup =
 [
-    [ "SlimeExtensiveMarkDown", "namespace_slime_extensive_mark_down.html", [
-      [ "Core", "namespace_slime_extensive_mark_down_1_1_core.html", [
-        [ "IMarkupExtension", "interface_slime_extensive_mark_down_1_1_core_1_1_i_markup_extension.html", "interface_slime_extensive_mark_down_1_1_core_1_1_i_markup_extension" ]
-      ] ]
-    ] ],
     [ "SlimeMarkUp", "namespace_slime_mark_up.html", [
       [ "Core", "namespace_slime_mark_up_1_1_core.html", [
         [ "Extensions", "namespace_slime_mark_up_1_1_core_1_1_extensions.html", [
