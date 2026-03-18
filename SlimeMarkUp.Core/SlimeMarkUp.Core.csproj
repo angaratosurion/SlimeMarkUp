@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <TargetFrameworks>net10.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
     <FileVersion>$(VersionPrefix)</FileVersion>
-    <Version>0.1.8.0</Version>
+    <Version>0.1.8.9</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/angaratosurion/SlimeMarkUp</RepositoryUrl>
