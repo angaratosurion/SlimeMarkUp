@@ -44,7 +44,7 @@ SlimeMarkUp - Βασικό Cheatsheet Markdown -> HTML
 Παράγει: <p><strong>έντονο</strong> και <em>πλάγιο</em></p>
 
 Εικόνα
-{width=300 height=200}
+![alt](image.png){width=100 height=200}
 Παράγει: <img src="[https://example.com/image.jpg](https://example.com/image.jpg)" alt="Alt Text" width="300" height="200" />
 
 Τίτλοι
@@ -116,7 +116,7 @@ Bold and Italic
 Produces: <p><strong>bold</strong> and <em>italic</em></p>
 
 Image
-{width=300 height=200}
+![alt](image.png){width=100 height=200}
 Produces: <img src="[https://example.com/image.jpg](https://example.com/image.jpg)" alt="Alt Text" width="300" height="200" />
 
 Headings
