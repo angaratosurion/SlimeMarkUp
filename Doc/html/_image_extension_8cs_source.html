@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.9.0</span>
+   <div id="projectname">SlimeMarkUp<span id="projectnumber">&#160;0.1.9.9</span>
    </div>
   </td>
  </tr>
@@ -108,7 +108,7 @@ $(function(){initNavTree('_image_extension_8cs_source.html',''); initResizable(t
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html">   21</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html">ImageExtension</a> : <a class="code hl_interface" href="interface_slime_mark_up_1_1_core_1_1_i_block_markup_extension.html">IBlockMarkupExtension</a></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#aa11cb2780fb313b1e18d0bf839fe2e7d">   26</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#aa11cb2780fb313b1e18d0bf839fe2e7d">Count</a> { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#a4c29213df21f6cd2e8b984231847184b">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#a4c29213df21f6cd2e8b984231847184b">CanParse</a>(<span class="keywordtype">string</span> line) =&gt; line.StartsWith(<span class="stringliteral">&quot;!![&quot;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#a4c29213df21f6cd2e8b984231847184b">   34</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#a4c29213df21f6cd2e8b984231847184b">CanParse</a>(<span class="keywordtype">string</span> line) =&gt; line.StartsWith(<span class="stringliteral">&quot;&lt;&quot;</span>);</div>
 <div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#ab245f569d4778fa28d072ebd0c2722a7">   39</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="class_slime_mark_up_1_1_core_1_1_extensions_1_1_slime_markup_1_1_image_extension.html#ab245f569d4778fa28d072ebd0c2722a7">IsToBeProccessed</a></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        { <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">false</span>; } }</div>
@@ -119,7 +119,7 @@ $(function(){initNavTree('_image_extension_8cs_source.html',''); initResizable(t
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            var line = lines.Dequeue();</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            var altMatch = Regex.Match(line, <span class="stringliteral">@&quot;!!\[(.*?)\]&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            var altMatch = Regex.Match(line, <span class="stringliteral">@&quot;&lt;(.*?)&gt;&quot;</span>);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            var srcMatch = Regex.Match(line, <span class="stringliteral">@&quot;\&zwj;((.*?)\&zwj;)&quot;</span>);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            var attrMatch = Regex.Match(line, <span class="stringliteral">@&quot;\{(.*?)\}&quot;</span>);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
