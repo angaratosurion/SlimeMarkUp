@@ -29,9 +29,9 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
         /// </summary>
         /// <param name="line">The input line.</param>
         /// <returns>
-        /// <c>true</c> if the line starts with <c><</c>; otherwise, <c>false</c>.
+        /// <c>true</c> if the line starts with <c>!!</c>; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanParse(string line) => line.StartsWith("<");
+        public bool CanParse(string line) => line.StartsWith("!!");
         /// <summary>
         /// Gets a value indicating whether the block should be
         /// processed immediately.
@@ -60,7 +60,7 @@ namespace SlimeMarkUp.Core.Extensions.SlimeMarkup
         {
             var line = lines.Dequeue();
 
-            var altMatch = Regex.Match(line, @"\<(.*?)\>");
+            var altMatch = Regex.Match(line, @"\!!(.*?)\!!");
             var srcMatch = Regex.Match(line, @"\((.*?)\)");
             var attrMatch = Regex.Match(line, @"\{(.*?)\}");
 
